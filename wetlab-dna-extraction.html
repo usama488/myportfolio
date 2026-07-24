@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNA Extraction from Plant Samples using CTAB Method | Wet Lab Case Study</title>
+  <meta name="description" content="Complete Wet Lab Molecular Biology Workflow: CTAB DNA Extraction from Plant Samples, PCR Amplification, and Agarose Gel Electrophoresis Analysis by Usama Bin Ali.">
+  <meta property="og:title" content="CTAB Plant DNA Extraction Workflow & Case Study">
+  <meta property="og:description" content="A published-grade interactive scientific protocol covering CTAB extraction, Nanodrop quantification, PCR, and gel electrophoresis.">
+  <link rel="stylesheet" href="assets/css/wetlab-shared.css">
+  <link rel="stylesheet" href="assets/css/wetlab.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-container">
+    <div id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Top Series Navigation Strip -->
+  <nav class="series-nav-bar">
+    <a href="index.html" class="back-link">
+      <ion-icon name="arrow-back-outline"></ion-icon> &larr; Back to Portfolio
+    </a>
+    <div class="series-links">
+      <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Wet Lab Series:</span>
+      <a href="wetlab-dna-extraction.html" class="series-pill plant active">1. CTAB Plant DNA</a>
+      <a href="wetlab-blood-dna-extraction.html" class="series-pill blood">2. Blood DNA</a>
+      <a href="wetlab-hair-dna-extraction.html" class="series-pill hair">3. Hair DNA</a>
+      <a href="wetlab-sperm-dna-extraction.html" class="series-pill sperm">4. Sperm DNA</a>
+      <a href="wetlab-saliva-dna-extraction.html" class="series-pill saliva">5. Saliva DNA</a>
+      <a href="dna-sequencing-workflow.html" class="series-pill sequencing">Bridge: Sequencing &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- Page Main Container -->
+  <div class="page-container">
+
+    <!-- Sticky Table of Contents Sidebar -->
+    <aside class="toc-sidebar">
+      <h3 class="toc-title">Table of Contents</h3>
+      <ul class="toc-list">
+        <li><a href="#overview" class="toc-link">Project Overview</a></li>
+        <li><a href="#step-1" class="toc-link">Step 1: Sample Collection</a></li>
+        <li><a href="#step-2" class="toc-link">Step 2: Sample Preparation</a></li>
+        <li><a href="#step-3" class="toc-link">Step 3: Tissue Grinding</a></li>
+        <li><a href="#step-4" class="toc-link">Step 4: CTAB Buffer Prep</a></li>
+        <li><a href="#step-5" class="toc-link">Step 5: Cell Lysis</a></li>
+        <li><a href="#step-6" class="toc-link">Step 6: Incubation</a></li>
+        <li><a href="#step-7" class="toc-link">Step 7: Phase Separation</a></li>
+        <li><a href="#step-8" class="toc-link">Step 8: Centrifugation</a></li>
+        <li><a href="#step-9" class="toc-link">Step 9: DNA Precipitation</a></li>
+        <li><a href="#step-10" class="toc-link">Step 10: Pellet Washing</a></li>
+        <li><a href="#step-11" class="toc-link">Step 11: Pellet Drying</a></li>
+        <li><a href="#step-12" class="toc-link">Step 12: DNA Dissolution</a></li>
+        <li><a href="#step-13" class="toc-link">Step 13: Quality Analysis</a></li>
+        <li><a href="#step-14" class="toc-link">Step 14: PCR Amplification</a></li>
+        <li><a href="#step-15" class="toc-link">Step 15: Gel Electrophoresis</a></li>
+        <li><a href="#interpretation" class="toc-link">Graph & Result Interpretation</a></li>
+        <li><a href="#applications" class="toc-link">Applications & Safety</a></li>
+        <li><a href="#workflow-timeline" class="toc-link">Final Timeline</a></li>
+        <li><a href="#references" class="toc-link">References</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Article Body -->
+    <main class="main-article">
+
+      <!-- Hero Section -->
+      <section class="hero-wrapper">
+        <div class="hero-header">
+          <span class="hero-subtitle">Complete Wet Lab Molecular Biology Protocol</span>
+          <h1 class="hero-title">DNA Extraction from Plant Samples using CTAB Method</h1>
+          <p class="hero-description">
+            A comprehensive, published-grade molecular biology case study detailing isolation of high-purity plant genomic DNA via Cetyltrimethylammonium Bromide (CTAB) lysis, followed by Nanodrop spectrophotometry, PCR amplification, and agarose gel electrophoresis.
+          </p>
+        </div>
+
+        <div class="hero-meta-strip">
+          <span class="info-chip"><strong>Method:</strong> CTAB Protocol</span>
+          <span class="info-chip"><strong>Techniques:</strong> PCR, Electrophoresis</span>
+          <span class="info-chip"><strong>Sample:</strong> Plant Leaf Tissue</span>
+          <span class="info-chip"><strong>Author:</strong> Usama Bin Ali (Bioinformatics Researcher)</span>
+          <span class="info-chip" id="read-time-badge">~15 min read</span>
+        </div>
+
+        <div class="hero-collage">
+          <div class="hero-img-box"><img src="assets/images/wetlab/hero-plant-leaves.jpg" alt="Fresh plant leaves collection"></div>
+          <div class="hero-img-box"><img src="assets/images/wetlab/hero-lab-bench.jpg" alt="Molecular biology lab bench"></div>
+          <div class="hero-img-box"><img src="assets/images/wetlab/hero-centrifuge.jpg" alt="High speed microcentrifuge"></div>
+          <div class="hero-img-box"><img src="assets/images/wetlab/hero-gel-rig.jpg" alt="Agarose gel electrophoresis setup"></div>
+        </div>
+      </section>
+
+      <!-- Project Overview -->
+      <section id="overview" class="glass-card section-anchor">
+        <h2 class="section-heading">
+          <ion-icon name="flask-outline" style="color: var(--accent-green);"></ion-icon>
+          Project Overview
+        </h2>
+        <p>
+          Deoxyribonucleic Acid (<span class="tooltip-term">DNA<span class="tooltip-popup">The molecule carrying genetic instructions for development and functioning of living organisms.</span></span>) extraction from plant tissues poses unique biochemical challenges due to rigid cellulose cell walls, abundant polyphenols, and complex polysaccharides. The <span class="tooltip-term">CTAB<span class="tooltip-popup">Cetyltrimethylammonium bromide, a cationic detergent that solubilizes membranes and forms complexes with DNA.</span></span> method is the gold-standard protocol designed to bind nucleic acids while precipitating polysaccharides and preventing polyphenolic oxidation.
+        </p>
+
+        <h3 style="margin: 20px 0 12px; font-size: 1.1rem; color: var(--text-dark);">Key Downstream Applications</h3>
+        <div class="grid-cards">
+          <div class="icon-card">
+            <div class="icon-card-header"><span class="icon-card-icon">🌱</span><span class="icon-card-title">Plant Breeding</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Marker-assisted selection (MAS) and cultivar verification.</p>
+          </div>
+          <div class="icon-card">
+            <div class="icon-card-header"><span class="icon-card-icon">🧬</span><span class="icon-card-title">DNA Barcoding</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Species identification using rbcL and matK chloroplast genes.</p>
+          </div>
+          <div class="icon-card">
+            <div class="icon-card-header"><span class="icon-card-icon">💻</span><span class="icon-card-title">Genome Sequencing</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">High-molecular-weight DNA prep for Illumina and Nanopore WGS.</p>
+          </div>
+          <div class="icon-card">
+            <div class="icon-card-header"><span class="icon-card-icon">🔬</span><span class="icon-card-title">Gene Expression</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">qPCR target validation and transgene verification.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Steps 1 - 13: Experimental Protocol -->
+      <section id="step-1" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">01</span> Plant Sample Collection</h2>
+        <p>Young, tender leaves are selected to minimize polysaccharide accumulation and polyphenol oxidation.</p>
+        <div class="step-tabs-wrapper">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="exp-1">Procedure</button>
+            <button class="tab-btn" data-tab="trouble-1">Troubleshooting</button>
+            <button class="tab-btn" data-tab="safety-1">Safety & Tips</button>
+          </div>
+          <div class="tab-content active" data-tab="exp-1">
+            <p>Collect 100–200 mg of fresh young leaf tissue. Wash thoroughly with double-distilled water to remove epiphytic microbes and dust.</p>
+          </div>
+          <div class="tab-content" data-tab="trouble-1">
+            <p><strong>Old Leaves:</strong> High polyphenols cause brown DNA pellets. Always use young expanding leaves.</p>
+          </div>
+          <div class="tab-content" data-tab="safety-1">
+            <p>Use sterile tweezers and gloved hands to prevent human DNA contamination.</p>
+          </div>
+        </div>
+        <div class="img-placeholder-card">
+          <div class="img-container"><img src="assets/images/wetlab/step-01-collection.jpg" alt="Collecting fresh leaf tissue"></div>
+          <div class="img-caption">Step 01: Selecting young leaf tissue in sterile foil.</div>
+        </div>
+      </section>
+
+      <section id="step-2" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">02</span> Sample Preparation</h2>
+        <p>Tissue is flash-frozen in liquid nitrogen (-196°C) to immediately arrest nuclease activity.</p>
+        <div class="img-placeholder-card">
+          <div class="img-container"><img src="assets/images/wetlab/step-02-prep.jpg" alt="Flash freezing sample in liquid nitrogen"></div>
+          <div class="img-caption">Step 02: Flash freezing leaf samples in liquid nitrogen.</div>
+        </div>
+      </section>
+
+      <section id="step-3" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">03</span> Mechanical Grinding</h2>
+        <p>Grinding leaf tissue in a pre-chilled mortar and pestle breaks the rigid cellulose cell wall.</p>
+        <div class="img-placeholder-card">
+          <div class="img-container"><img src="assets/images/wetlab/step-03-grinding.jpg" alt="Grinding leaf tissue with mortar and pestle"></div>
+          <div class="img-caption">Step 03: Powdering frozen leaf tissue into fine flour-like consistency.</div>
+        </div>
+      </section>
+
+      <section id="step-4" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">04</span> CTAB Lysis Buffer Preparation</h2>
+        <p>The buffer components solubilize cell membranes while preserving DNA integrity.</p>
+        <div class="table-responsive">
+          <table class="sci-table">
+            <thead>
+              <tr><th>Reagent</th><th>Concentration</th><th>Scientific Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>CTAB</td><td>2% (w/v)</td><td>Solubilizes cell membrane lipids and precipitates polysaccharides.</td></tr>
+              <tr><td>NaCl</td><td>1.4 M</td><td>High salt concentration maintains DNA solubility while CTAB binds.</td></tr>
+              <tr><td>Tris-HCl (pH 8.0)</td><td>100 mM</td><td>Buffers pH to prevent acid hydrolysis of DNA.</td></tr>
+              <tr><td>EDTA (pH 8.0)</td><td>20 mM</td><td>Chelates divalent cations ($Mg^{2+}$) to inhibit DNase enzymes.</td></tr>
+              <tr><td>&beta;-Mercaptoethanol</td><td>0.2% (v/v)</td><td>Reduces disulfide bonds and inactivates polyphenols.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="step-5" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">05</span> Cell Lysis & Buffer Addition</h2>
+        <p>Pre-warmed CTAB buffer (65°C) is added to the ground leaf powder to disrupt lipid bilayers.</p>
+        <div class="flow-diagram">
+          <div class="flow-step">Leaf Powder</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">Hot CTAB Buffer</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">Cell Membrane Lysis</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">Crude Homogenate</div>
+        </div>
+      </section>
+
+      <section id="step-6" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">06</span> Water Bath Incubation</h2>
+        <p>Samples are incubated at 65°C for 30–60 minutes with periodic gentle inversion.</p>
+        <div class="img-placeholder-card">
+          <div class="img-container"><img src="assets/images/wetlab/step-06-incubation.jpg" alt="Water bath incubation at 65C"></div>
+          <div class="img-caption">Step 06: Water bath incubation to optimize protein denaturation.</div>
+        </div>
+      </section>
+
+      <section id="step-7" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">07</span> Phase Separation (Chloroform:Isoamyl Alcohol 24:1)</h2>
+        <p>Organic solvent extraction separates proteins, lipids, and cellular debris from aqueous nucleic acids.</p>
+        <div class="img-placeholder-card">
+          <div class="img-container"><img src="assets/images/wetlab/step-07-phase.jpg" alt="Organic phase separation in microcentrifuge tube"></div>
+          <div class="img-caption">Step 07: Aqueous top layer containing DNA vs. organic bottom protein layer.</div>
+        </div>
+      </section>
+
+      <section id="step-8" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">08</span> Centrifugation</h2>
+        <p>Centrifuge at 12,000 rpm for 10 minutes at 4°C to resolve phase separation.</p>
+      </section>
+
+      <section id="step-9" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">09</span> DNA Precipitation (Isopropanol)</h2>
+        <p>Addition of ice-cold isopropanol (0.6 volumes) precipitates genomic DNA into visible white threads.</p>
+        <div class="img-placeholder-card">
+          <div class="img-container"><img src="assets/images/wetlab/step-09-precipitation.jpg" alt="DNA pellet precipitation with isopropanol"></div>
+          <div class="img-caption">Step 09: Visible genomic DNA spools forming upon alcohol addition.</div>
+        </div>
+      </section>
+
+      <section id="step-10" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">10</span> DNA Pellet Washing (70% Ethanol)</h2>
+        <p>Wash pellet twice with 70% ethanol to remove residual salts and organic solvents.</p>
+      </section>
+
+      <section id="step-11" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">11</span> Air Drying Pellet</h2>
+        <p>Invert microcentrifuge tube under sterile laminar airflow for 15 minutes to dry residual ethanol.</p>
+      </section>
+
+      <section id="step-12" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">12</span> DNA Dissolution</h2>
+        <p>Resuspend purified DNA pellet in 50 &mu;L 1X TE Buffer (10 mM Tris-HCl, 1 mM EDTA) or nuclease-free water.</p>
+      </section>
+
+      <section id="step-13" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">13</span> DNA Quality Analysis (Nanodrop Spectrophotometry)</h2>
+        <p>Absorbance ratios assess DNA purity and concentration.</p>
+        <div class="table-responsive">
+          <table class="sci-table">
+            <thead>
+              <tr><th>Ratio / Parameter</th><th>Pure Range</th><th>Meaning of Deviations</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>$A_{260}/A_{280}$</td><td>1.8 – 2.0</td><td>&lt; 1.8 indicates protein/phenol contamination; &gt; 2.0 indicates RNA.</td></tr>
+              <tr><td>$A_{260}/A_{230}$</td><td>2.0 – 2.2</td><td>&lt; 2.0 indicates salt, carbohydrate, or CTAB contamination.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="img-placeholder-card">
+          <div class="img-container"><img src="assets/images/wetlab/step-13-nanodrop.jpg" alt="Nanodrop spectrophotometer screenshot graph"></div>
+          <div class="img-caption">Step 13: Clean Nanodrop absorbance peak at 260 nm indicating high purity.</div>
+        </div>
+      </section>
+
+      <!-- Step 14: PCR -->
+      <section id="step-14" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 14: Polymerase Chain Reaction (PCR) Amplification</h2>
+        <p>In vitro enzymatic amplification of target DNA loci using specific primers and Taq polymerase.</p>
+        
+        <h3 style="margin: 20px 0 10px; color: var(--text-dark);">3-Stage Thermal Cycling</h3>
+        <div class="flow-diagram">
+          <div class="flow-step">1. Denaturation<br><small>95°C (30s)</small></div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">2. Annealing<br><small>55–60°C (30s)</small></div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">3. Extension<br><small>72°C (60s)</small></div>
+        </div>
+
+        <h3 style="margin: 20px 0 10px; color: var(--text-dark);">PCR Components Table</h3>
+        <div class="table-responsive">
+          <table class="sci-table">
+            <thead>
+              <tr><th>Component</th><th>Volume (25 &mu;L Reaction)</th><th>Final Concentration</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2X PCR Master Mix (Taq + dNTPs)</td><td>12.5 &mu;L</td><td>1X</td></tr>
+              <tr><td>Forward Primer (10 &mu;M)</td><td>1.0 &mu;L</td><td>0.4 &mu;M</td></tr>
+              <tr><td>Reverse Primer (10 &mu;M)</td><td>1.0 &mu;L</td><td>0.4 &mu;M</td></tr>
+              <tr><td>Template DNA (~50 ng/&mu;L)</td><td>2.0 &mu;L</td><td>~100 ng</td></tr>
+              <tr><td>Nuclease-Free Water</td><td>8.5 &mu;L</td><td>N/A</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Step 15: Gel Electrophoresis -->
+      <section id="step-15" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 15: Agarose Gel Electrophoresis</h2>
+        <p>DNA fragments migrate through a 1% agarose matrix toward the positive anode ($+$) based on molecular weight.</p>
+
+        <!-- Interactive Comparison Slider -->
+        <h3 style="margin: 20px 0 12px; font-size: 1.1rem; color: var(--text-dark);">Interactive Gel Result Comparison (Clean Band vs. Smeared/Failed)</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Drag handle left/right to compare clean high-molecular-weight band vs. degraded smeared DNA.</p>
+        
+        <div class="comparison-slider-container" id="gel-comparison-slider">
+          <img src="assets/images/wetlab/gel-good-band.jpg" alt="Clean DNA Gel Band" class="comparison-img">
+          <div class="comparison-overlay">
+            <img src="assets/images/wetlab/gel-smeared-band.jpg" alt="Smeared Degraded Gel Band">
+          </div>
+          <div class="comparison-handle">&harr;</div>
+          <span class="comparison-label label-before">Degraded / Smeared Gel</span>
+          <span class="comparison-label label-after">Clean Intact DNA Band</span>
+        </div>
+      </section>
+
+      <!-- Graph & Image Interpretation -->
+      <section id="interpretation" class="glass-card section-anchor">
+        <h2 class="section-heading">Graph & Result Interpretation</h2>
+        <div class="grid-cards">
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--text-dark);">Nanodrop Spectral Curve</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Peak at 260 nm without secondary 230 nm shoulder indicates clean CTAB removal.</p>
+          </div>
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--text-dark);">Gel Lane Analysis</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Single sharp band &gt;10 kb proves minimal shearing during mechanical grinding.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Applications & Safety -->
+      <section id="applications" class="glass-card section-anchor">
+        <h2 class="section-heading">Biosafety & Laboratory Precautions</h2>
+        <div class="warning-banner">
+          <strong>Safety Warning:</strong> Chloroform and &beta;-mercaptoethanol are toxic volatile compounds. Always handle inside a certified chemical fume hood with nitrile gloves.
+        </div>
+      </section>
+
+      <!-- Final Timeline -->
+      <section id="workflow-timeline" class="glass-card section-anchor">
+        <h2 class="section-heading">Complete 20-Stage Workflow Summary</h2>
+        <div class="timeline-wrapper">
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 1–5: Harvest & Micro-Grinding</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Fresh leaf sampling through mortar powdering under liquid nitrogen.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 6–10: Lysis & Phase Separation</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">65°C incubation, Chloroform extraction, and high-speed centrifugation.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-green);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 11–20: Purification, PCR & Gel Handoff</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Precipitation, Nanodrop verification, PCR amplification, and gel documentation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section id="references" class="glass-card section-anchor">
+        <h2 class="section-heading">References & Academic Protocols</h2>
+        <ol style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          <li>Doyle, J. J., & Doyle, J. L. (1987). A rapid DNA isolation procedure for small quantities of fresh leaf tissue. <em>Phytochemical Bulletin</em>, 19, 11-15.</li>
+          <li>Sambrook, J., & Russell, D. W. (2001). <em>Molecular Cloning: A Laboratory Manual</em> (3rd ed.). Cold Spring Harbor Laboratory Press.</li>
+        </ol>
+      </section>
+
+      <!-- Footer Showcase Index -->
+      <footer class="collection-footer">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark);">Wet Lab DNA Extraction Series Collection</h3>
+        <div class="collection-grid">
+          <a href="wetlab-dna-extraction.html" class="collection-card" style="border-color: var(--accent-green);">
+            <div class="collection-card-title">1. CTAB Plant DNA</div>
+            <div class="collection-card-desc">CTAB extraction from plant leaves with high polyphenols.</div>
+          </a>
+          <a href="wetlab-blood-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">2. Blood DNA</div>
+            <div class="collection-card-desc">Clinical genomic DNA isolation using spin columns.</div>
+          </a>
+          <a href="wetlab-hair-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">3. Hair DNA</div>
+            <div class="collection-card-desc">Forensic hair follicle DNA extraction with Proteinase K.</div>
+          </a>
+          <a href="wetlab-sperm-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">4. Sperm DNA</div>
+            <div class="collection-card-desc">Protamine breakdown via DTT for forensic genetics.</div>
+          </a>
+          <a href="wetlab-saliva-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">5. Saliva DNA</div>
+            <div class="collection-card-desc">Non-invasive oral cell DNA prep with Qubit quantification.</div>
+          </a>
+          <a href="dna-sequencing-workflow.html" class="collection-card" style="border-color: #2563eb;">
+            <div class="collection-card-title">Bridge: Sequencing &rarr;</div>
+            <div class="collection-card-desc">Handoff from purified DNA to NGS & Bioinformatics.</div>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="assets/js/wetlab-shared.js"></script>
+  <script src="assets/js/wetlab.js"></script>
+</body>
+</html>

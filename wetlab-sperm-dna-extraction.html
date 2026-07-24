@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genomic DNA Extraction from Sperm Samples | Forensic Genetics Spin Column Case Study</title>
+  <meta name="description" content="Forensic Molecular Genetics Workflow: DNA Extraction from Sperm Cells using DTT Protamine Reduction, Silica Spin Columns, PCR, and STR Profiling.">
+  <link rel="stylesheet" href="assets/css/wetlab-shared.css">
+  <link rel="stylesheet" href="assets/css/sperm-dna.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-container">
+    <div id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Top Series Navigation Strip -->
+  <nav class="series-nav-bar">
+    <a href="index.html" class="back-link">
+      <ion-icon name="arrow-back-outline"></ion-icon> &larr; Back to Portfolio
+    </a>
+    <div class="series-links">
+      <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Wet Lab Series:</span>
+      <a href="wetlab-dna-extraction.html" class="series-pill plant">1. CTAB Plant DNA</a>
+      <a href="wetlab-blood-dna-extraction.html" class="series-pill blood">2. Blood DNA</a>
+      <a href="wetlab-hair-dna-extraction.html" class="series-pill hair">3. Hair DNA</a>
+      <a href="wetlab-sperm-dna-extraction.html" class="series-pill sperm active">4. Sperm DNA</a>
+      <a href="wetlab-saliva-dna-extraction.html" class="series-pill saliva">5. Saliva DNA</a>
+      <a href="dna-sequencing-workflow.html" class="series-pill sequencing">Bridge: Sequencing &rarr;</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+
+    <!-- Sticky TOC -->
+    <aside class="toc-sidebar">
+      <h3 class="toc-title">Sperm DNA TOC</h3>
+      <ul class="toc-list">
+        <li><a href="#overview" class="toc-link">Forensic Overview</a></li>
+        <li><a href="#comparison" class="toc-link">Why Sperm DNA Is Different</a></li>
+        <li><a href="#step-1" class="toc-link">Step 1: Sample Collection</a></li>
+        <li><a href="#step-2" class="toc-link">Step 2: Sample Washing</a></li>
+        <li><a href="#step-3" class="toc-link">Step 3: Sperm Cell Lysis</a></li>
+        <li><a href="#step-4" class="toc-link">Step 4: DTT Protamine Breakdown</a></li>
+        <li><a href="#step-5" class="toc-link">Step 5: Silica Matrix Binding</a></li>
+        <li><a href="#step-6" class="toc-link">Step 6: Centrifugation</a></li>
+        <li><a href="#step-7" class="toc-link">Step 7: Column Wash</a></li>
+        <li><a href="#step-8" class="toc-link">Step 8: Pure DNA Elution</a></li>
+        <li><a href="#step-9" class="toc-link">Step 9: Nanodrop Check</a></li>
+        <li><a href="#step-10" class="toc-link">Step 10: Gel Quality Check</a></li>
+        <li><a href="#step-11" class="toc-link">Step 11: Y-STR PCR Amplification</a></li>
+        <li><a href="#step-12" class="toc-link">Step 12: PCR Gel Verification</a></li>
+        <li><a href="#forensic-genetics" class="toc-link">Forensic Genetics Applications</a></li>
+        <li><a href="#workflow-timeline" class="toc-link">Final Timeline</a></li>
+        <li><a href="#references" class="toc-link">References</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-article">
+
+      <!-- Hero Section -->
+      <section class="hero-wrapper">
+        <div class="hero-header">
+          <span class="hero-subtitle" style="color: var(--accent-indigo);">Forensic Genetics Case Study</span>
+          <h1 class="hero-title">Genomic DNA Extraction from Sperm Samples (Spin Column)</h1>
+          <p class="hero-description">
+            Isolating high-density haploid genomic DNA from sperm cells requiring Dithiothreitol (DTT) reduction of protamine disulfide bonds, silica spin column purification, and Y-STR PCR forensic profiling.
+          </p>
+        </div>
+
+        <div class="notice-banner" style="background: #eef2ff; border-left-color: var(--accent-indigo); color: #3730a3;">
+          <strong>Ethics & Biohazard Handling Notice:</strong> Samples were processed strictly under clinical research guidelines with donor consent. All procedures follow biohazard Level 2 safety protocols.
+        </div>
+
+        <div class="hero-meta-strip">
+          <span class="info-chip"><strong>Method:</strong> Silica Spin Column + DTT</span>
+          <span class="info-chip"><strong>Sample:</strong> Sperm Cells / Ejaculate</span>
+          <span class="info-chip"><strong>Field:</strong> Forensic Genetics / Diagnostics</span>
+          <span class="info-chip"><strong>Author:</strong> Usama Bin Ali (Bioinformatics Researcher)</span>
+          <span class="info-chip" id="read-time-badge">~13 min read</span>
+        </div>
+
+        <div class="hero-collage">
+          <div class="hero-img-box"><img src="assets/images/sperm-dna/hero-sperm-microscope.jpg" alt="Sperm cells under light microscope"></div>
+          <div class="hero-img-box"><img src="assets/images/sperm-dna/hero-dtt-reagent.jpg" alt="DTT reducing agent bottle"></div>
+          <div class="hero-img-box"><img src="assets/images/sperm-dna/hero-column-kit.jpg" alt="Silica membrane extraction kit"></div>
+          <div class="hero-img-box"><img src="assets/images/sperm-dna/hero-y-str-gel.jpg" alt="Y-STR PCR amplification gel electroferogram"></div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section id="overview" class="glass-card section-anchor">
+        <h2 class="section-heading">Biological Overview & Protamine Packaging</h2>
+        <p>
+          Sperm chromatin is unique: somatic histones are replaced during spermatogenesis by small, basic proteins called <span class="tooltip-term">protamines<span class="tooltip-popup">Arginine-rich nuclear proteins forming tight disulfide-crosslinked complexes to condense sperm DNA.</span></span>. This hyper-condensed structure protects paternal DNA but resists standard lysis buffers unless reduced by <span class="tooltip-term">DTT<span class="tooltip-popup">Dithiothreitol, a strong reducing agent that cleaves disulfide bonds in protamines.</span></span>.
+        </p>
+      </section>
+
+      <!-- Why Sperm DNA Is Different Comparison Table -->
+      <section id="comparison" class="glass-card section-anchor">
+        <h2 class="section-heading">Why Sperm DNA Extraction Is Scientifically Distinct</h2>
+        <p>As demonstrated in my related Wet Lab projects (<a href="wetlab-blood-dna-extraction.html">Blood DNA</a> and <a href="wetlab-hair-dna-extraction.html">Hair DNA</a>), each human sample type requires targeted biochemical treatment:</p>
+
+        <div class="table-responsive">
+          <table class="sci-table">
+            <thead>
+              <tr><th>Sample Type</th><th>Target DNA Source</th><th>Special Biochemical Requirement</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><a href="wetlab-blood-dna-extraction.html">Blood</a></td><td>White blood cells (Leukocytes)</td><td>Erythrocyte lysis + Proteinase K digestion</td></tr>
+              <tr><td><a href="wetlab-hair-dna-extraction.html">Hair</a></td><td>Follicular sheath cells</td><td>High-concentration Keratinase / Proteinase K</td></tr>
+              <tr style="background: #eef2ff; font-weight: 600;"><td>Sperm</td><td>Haploid sperm nucleus</td><td>DTT (Dithiothreitol) reduction of protamines</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Steps 1 - 8 -->
+      <section id="step-1" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">01</span> Sample Collection & Storage</h2>
+        <p>Samples are stored in sterile containers and processed promptly to prevent enzymatic autolysis.</p>
+      </section>
+
+      <section id="step-2" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">02</span> PBS Sample Washing</h2>
+        <p>Washing with phosphate-buffered saline (PBS) removes seminal plasma proteins and non-sperm components.</p>
+      </section>
+
+      <section id="step-3" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">03</span> Sperm Cell Lysis</h2>
+        <p>Lysis buffer containing SDS detergent disrupts outer cell membranes.</p>
+      </section>
+
+      <section id="step-4" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">04</span> Dual Reagent Protamine Breakdown (DTT + Proteinase K)</h2>
+        <p>DTT breaks inter-chain disulfide bonds in protamines while Proteinase K hydrolyzes nuclear proteins.</p>
+        <div class="table-responsive">
+          <table class="sci-table">
+            <thead>
+              <tr><th>Reagent</th><th>Function</th><th>Scientific Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>DTT (Dithiothreitol)</td><td>Disulfide bond reduction</td><td>Cleaves $-S-S-$ bridges holding protamines together.</td></tr>
+              <tr><td>Proteinase K</td><td>Proteolytic cleavage</td><td>Digests uncluttered protamine and cytoplasmic proteins.</td></tr>
+              <tr><td>SDS Detergent</td><td>Lipid membrane solubilization</td><td>Lyses outer nuclear membranes.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="step-5" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">05</span> Silica Matrix Binding</h2>
+        <p>Chaotropic binding salts anchor liberated sperm genomic DNA onto silica fibers.</p>
+      </section>
+
+      <section id="step-6" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">06</span> Centrifugation</h2>
+        <p>Spin at 12,000 rpm to bind DNA; discard flow-through containing digested protamines.</p>
+      </section>
+
+      <section id="step-7" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">07</span> Washing Steps</h2>
+        <p>Ethanol-based wash buffers remove residual DTT, salts, and protein fragments.</p>
+      </section>
+
+      <section id="step-8" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">08</span> Pure DNA Elution</h2>
+        <p>Elute high-molecular-weight sperm genomic DNA in 40 &mu;L sterile nuclease-free water.</p>
+      </section>
+
+      <!-- Steps 9 - 12 -->
+      <section id="step-9" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 09: Nanodrop Spectrophotometry</h2>
+        <p>Pure sperm DNA yields high concentration ($&gt;50\text{ ng/}\mu\text{L}$) with $A_{260}/A_{280} = 1.80 - 1.85$.</p>
+      </section>
+
+      <section id="step-10" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 10: Gel Integrity & Comparison Slider</h2>
+        <div class="comparison-slider-container">
+          <img src="assets/images/sperm-dna/gel-sperm-clean.jpg" alt="Clean Sperm Genomic DNA Band" class="comparison-img">
+          <div class="comparison-overlay">
+            <img src="assets/images/sperm-dna/gel-sperm-incomplete-lysis.jpg" alt="Incomplete Lysis Smear">
+          </div>
+          <div class="comparison-handle">&harr;</div>
+          <span class="comparison-label label-before">Incomplete DTT Lysis Smear</span>
+          <span class="comparison-label label-after">Clean High-MW Sperm Band</span>
+        </div>
+      </section>
+
+      <section id="step-11" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 11: Y-STR PCR Amplification</h2>
+        <p>Male-specific Y-chromosome Short Tandem Repeat (Y-STR) locus amplification for forensic lineage tracking.</p>
+      </section>
+
+      <section id="step-12" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 12: PCR Gel Verification</h2>
+        <p>Visualizing amplified male-specific Y-STR alleles on a high-resolution agarose gel.</p>
+      </section>
+
+      <!-- Forensic Genetics -->
+      <section id="forensic-genetics" class="glass-card section-anchor">
+        <h2 class="section-heading">Forensic Genetics Applications</h2>
+        <div class="grid-cards">
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--accent-indigo);">Differential Extraction</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Separating sperm DNA from female epithelial cell DNA in sexual assault evidence.</p>
+          </div>
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--accent-indigo);">Paternity Testing</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Definitive paternal allele verification using STR locus profiles.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow Timeline -->
+      <section id="workflow-timeline" class="glass-card section-anchor">
+        <h2 class="section-heading">Complete 12-Stage Sperm DNA Timeline</h2>
+        <div class="timeline-wrapper">
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-indigo);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 1–4: Sample Wash & DTT Protamine Lysis</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">PBS wash, SDS solubilization, and DTT disulfide bond cleavage.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-indigo);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 5–12: Spin Column Purification to Y-STR Profiling</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Silica matrix binding, ethanol washes, elution, and Y-STR PCR verification.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section id="references" class="glass-card section-anchor">
+        <h2 class="section-heading">References</h2>
+        <ol style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          <li>Gill, P., Jeffreys, A. J., & Werrett, D. J. (1985). Forensic application of DNA 'fingerprints'. <em>Nature</em>, 318(6046), 577-579.</li>
+          <li>Butler, J. M. (2012). <em>Advanced Topics in Forensic DNA Typing: Methodology</em>. Academic Press.</li>
+        </ol>
+      </section>
+
+      <!-- Footer Showcase Index -->
+      <footer class="collection-footer">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark);">Wet Lab DNA Extraction Series Collection</h3>
+        <div class="collection-grid">
+          <a href="wetlab-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">1. CTAB Plant DNA</div>
+            <div class="collection-card-desc">CTAB extraction from plant leaves with high polyphenols.</div>
+          </a>
+          <a href="wetlab-blood-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">2. Blood DNA</div>
+            <div class="collection-card-desc">Clinical genomic DNA isolation using spin columns.</div>
+          </a>
+          <a href="wetlab-hair-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">3. Hair DNA</div>
+            <div class="collection-card-desc">Forensic hair follicle DNA extraction with Proteinase K.</div>
+          </a>
+          <a href="wetlab-sperm-dna-extraction.html" class="collection-card" style="border-color: var(--accent-indigo);">
+            <div class="collection-card-title">4. Sperm DNA</div>
+            <div class="collection-card-desc">Protamine breakdown via DTT for forensic genetics.</div>
+          </a>
+          <a href="wetlab-saliva-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">5. Saliva DNA</div>
+            <div class="collection-card-desc">Non-invasive oral cell DNA prep with Qubit quantification.</div>
+          </a>
+          <a href="dna-sequencing-workflow.html" class="collection-card" style="border-color: #2563eb;">
+            <div class="collection-card-title">Bridge: Sequencing &rarr;</div>
+            <div class="collection-card-desc">Handoff from purified DNA to NGS & Bioinformatics.</div>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="assets/js/wetlab-shared.js"></script>
+  <script src="assets/js/sperm-dna.js"></script>
+</body>
+</html>

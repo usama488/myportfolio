@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genomic DNA Extraction from Human Blood | Spin Column Clinical Case Study</title>
+  <meta name="description" content="Clinical Molecular Biology Workflow: Human Blood Genomic DNA Extraction via Silica Spin Column Method, PCR, and Gel Electrophoresis Analysis.">
+  <link rel="stylesheet" href="assets/css/wetlab-shared.css">
+  <link rel="stylesheet" href="assets/css/blood-dna.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-container">
+    <div id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Top Series Navigation Strip -->
+  <nav class="series-nav-bar">
+    <a href="index.html" class="back-link">
+      <ion-icon name="arrow-back-outline"></ion-icon> &larr; Back to Portfolio
+    </a>
+    <div class="series-links">
+      <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Wet Lab Series:</span>
+      <a href="wetlab-dna-extraction.html" class="series-pill plant">1. CTAB Plant DNA</a>
+      <a href="wetlab-blood-dna-extraction.html" class="series-pill blood active">2. Blood DNA</a>
+      <a href="wetlab-hair-dna-extraction.html" class="series-pill hair">3. Hair DNA</a>
+      <a href="wetlab-sperm-dna-extraction.html" class="series-pill sperm">4. Sperm DNA</a>
+      <a href="wetlab-saliva-dna-extraction.html" class="series-pill saliva">5. Saliva DNA</a>
+      <a href="dna-sequencing-workflow.html" class="series-pill sequencing">Bridge: Sequencing &rarr;</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+
+    <!-- Sticky TOC -->
+    <aside class="toc-sidebar">
+      <h3 class="toc-title">Blood DNA TOC</h3>
+      <ul class="toc-list">
+        <li><a href="#overview" class="toc-link">Clinical Overview</a></li>
+        <li><a href="#step-1" class="toc-link">Step 1: Blood Collection (EDTA)</a></li>
+        <li><a href="#step-2" class="toc-link">Step 2: Cell Lysis</a></li>
+        <li><a href="#step-3" class="toc-link">Step 3: Proteinase K Digestion</a></li>
+        <li><a href="#step-4" class="toc-link">Step 4: Silica Membrane Binding</a></li>
+        <li><a href="#step-5" class="toc-link">Step 5: Column Washing</a></li>
+        <li><a href="#step-6" class="toc-link">Step 6: Pure DNA Elution</a></li>
+        <li><a href="#step-7" class="toc-link">Step 7: Nanodrop Quality Check</a></li>
+        <li><a href="#step-8" class="toc-link">Step 8: Gel Check & Integrity</a></li>
+        <li><a href="#step-9" class="toc-link">Step 9: PCR Amplification</a></li>
+        <li><a href="#step-10" class="toc-link">Step 10: PCR Gel Verification</a></li>
+        <li><a href="#results" class="toc-link">Result Interpretation</a></li>
+        <li><a href="#safety" class="toc-link">Biosafety & Equipment</a></li>
+        <li><a href="#workflow-timeline" class="toc-link">Final Timeline</a></li>
+        <li><a href="#references" class="toc-link">References</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-article">
+
+      <!-- Hero Section -->
+      <section class="hero-wrapper">
+        <div class="hero-header">
+          <span class="hero-subtitle">Clinical Molecular Diagnostics Protocol</span>
+          <h1 class="hero-title">Genomic DNA Extraction from Human Blood (Spin Column)</h1>
+          <p class="hero-description">
+            Standard operating protocol for isolating ultra-pure genomic DNA from nucleated human leukocytes (WBCs) utilizing silica-membrane spin column technology, followed by PCR diagnostic amplification and gel electrophoresis.
+          </p>
+        </div>
+
+        <div class="notice-banner">
+          <strong>Ethical & Biosafety Notice:</strong> Blood sampling procedures were conducted following institutional ethics committee clearance. Human blood is treated as Biosafety Level 2 (BSL-2) material.
+        </div>
+
+        <div class="hero-meta-strip">
+          <span class="info-chip"><strong>Method:</strong> Silica Spin Column</span>
+          <span class="info-chip"><strong>Techniques:</strong> PCR, Electrophoresis</span>
+          <span class="info-chip"><strong>Sample:</strong> Human EDTA Whole Blood</span>
+          <span class="info-chip"><strong>Author:</strong> Usama Bin Ali (Bioinformatics Researcher)</span>
+          <span class="info-chip" id="read-time-badge">~12 min read</span>
+        </div>
+
+        <div class="hero-collage">
+          <div class="hero-img-box"><img src="assets/images/blood-dna/hero-edta-tubes.jpg" alt="EDTA blood collection tubes"></div>
+          <div class="hero-img-box"><img src="assets/images/blood-dna/hero-wbc-microscope.jpg" alt="White blood cells under microscope"></div>
+          <div class="hero-img-box"><img src="assets/images/blood-dna/hero-spin-column.jpg" alt="Silica membrane spin column kit"></div>
+          <div class="hero-img-box"><img src="assets/images/blood-dna/hero-pcr-machine.jpg" alt="Clinical thermal cycler PCR machine"></div>
+        </div>
+      </section>
+
+      <!-- Clinical Overview -->
+      <section id="overview" class="glass-card section-anchor">
+        <h2 class="section-heading">Clinical Overview & Biological Principle</h2>
+        <p>
+          Human whole blood consists of erythrocytes (red blood cells), leukocytes (white blood cells), and thrombocytes (platelets) suspended in plasma. Mature erythrocytes in humans lack nuclei and genomic DNA. Therefore, genomic DNA extraction targets the nucleated <span class="tooltip-term">leukocytes<span class="tooltip-popup">White blood cells containing complete diploid genomic DNA.</span></span>.
+        </p>
+        <div class="grid-cards">
+          <div class="icon-card">
+            <div class="icon-card-header"><span class="icon-card-icon">🏥</span><span class="icon-card-title">Disease Diagnostics</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Detecting inherited genetic mutations and pathogen DNA in blood.</p>
+          </div>
+          <div class="icon-card">
+            <div class="icon-card-header"><span class="icon-card-icon">🧬</span><span class="icon-card-title">Pharmacogenomics</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Genotyping drug metabolizing enzymes (CYP450 variants).</p>
+          </div>
+          <div class="icon-card">
+            <div class="icon-card-header"><span class="icon-card-icon">🔬</span><span class="icon-card-title">Cancer Biomarkers</span></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Liquid biopsy and circulating cell-free DNA (cfDNA) analysis.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Steps 1 - 8 -->
+      <section id="step-1" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">01</span> Blood Collection & EDTA Anticoagulation</h2>
+        <p>Blood is drawn into <span class="tooltip-term">EDTA<span class="tooltip-popup">Ethylenediaminetetraacetic acid, an anticoagulant that chelates $Ca^{2+}$ to prevent coagulation and inhibit blood DNases.</span></span> tubes to prevent clotting.</p>
+      </section>
+
+      <section id="step-2" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">02</span> RBC Lysis & Leukocyte Isolation</h2>
+        <p>Selective RBC lysis buffer breaks non-nucleated red blood cells, yielding a clean white blood cell pellet after centrifugation.</p>
+      </section>
+
+      <section id="step-3" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">03</span> Proteinase K Digestion</h2>
+        <p>Enzymatic digestion at 56°C degrades cellular proteins, nucleases, and immunoglobulins.</p>
+      </section>
+
+      <section id="step-4" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">04</span> Silica Membrane DNA Binding</h2>
+        <p>Chaotropic salts (guanidine HCl) disrupt water structure, forcing DNA phosphate backbones to bind silica membrane fibers.</p>
+      </section>
+
+      <section id="step-5" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">05</span> Column Wash Steps (AW1 & AW2 Buffers)</h2>
+        <p>Ethanol-based wash buffers remove residual hemoglobin, cellular debris, and chaotropic salts.</p>
+      </section>
+
+      <section id="step-6" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">06</span> Pure DNA Elution</h2>
+        <p>Low-salt elution buffer (10 mM Tris-HCl pH 8.5) releases high-molecular-weight genomic DNA into sterile collection tubes.</p>
+      </section>
+
+      <section id="step-7" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">07</span> Nanodrop Quantification</h2>
+        <p>High quality blood DNA yields $A_{260}/A_{280} \approx 1.8$ with concentration between 20–100 ng/&mu;L.</p>
+      </section>
+
+      <section id="step-8" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">08</span> Gel Quality Check</h2>
+        <p>1% agarose gel electrophoresis shows a single intact genomic DNA band &gt;20 kb with minimal degradation smearing.</p>
+      </section>
+
+      <!-- Step 9 & 10: PCR & Gel -->
+      <section id="step-9" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 09: Diagnostic PCR Amplification</h2>
+        <p>Target gene regions (e.g., human &beta;-globin gene) are amplified to confirm DNA functionality.</p>
+      </section>
+
+      <section id="step-10" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 10: PCR Gel Verification & Comparison Slider</h2>
+        <div class="comparison-slider-container">
+          <img src="assets/images/blood-dna/gel-blood-clean.jpg" alt="Clean Blood PCR Band" class="comparison-img">
+          <div class="comparison-overlay">
+            <img src="assets/images/blood-dna/gel-blood-failed.jpg" alt="Heparin Inhibited PCR Failure">
+          </div>
+          <div class="comparison-handle">&harr;</div>
+          <span class="comparison-label label-before">Inhibited / Failed PCR</span>
+          <span class="comparison-label label-after">Clean Diagnostic Band</span>
+        </div>
+      </section>
+
+      <!-- Results & Safety -->
+      <section id="results" class="glass-card section-anchor">
+        <h2 class="section-heading">Result Interpretation Cards</h2>
+        <div class="grid-cards">
+          <div class="icon-card" style="border-left: 4px solid var(--accent-green-light);">
+            <h4 style="font-weight: 600; color: var(--accent-green-light);">Optimal Result</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Ratio $A_{260}/A_{280} = 1.82$, sharp genomic band, strong PCR product.</p>
+          </div>
+          <div class="icon-card" style="border-left: 4px solid var(--accent-red);">
+            <h4 style="font-weight: 600; color: var(--accent-red);">Hemoglobin Contamination</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Heme inhibits Taq polymerase. Ratio $A_{260}/A_{230} &lt; 1.5$.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="safety" class="glass-card section-anchor">
+        <h2 class="section-heading">Biosafety & Facility Requirements</h2>
+        <div class="warning-banner" style="background: #fef2f2; border-left-color: var(--accent-red); color: #991b1b;">
+          <strong>BSL-2 Biohazard Safety:</strong> Always wear double gloves, lab coat, and face shield. Dispose of blood-contaminated tips and tubes in biohazard autoclaving bags.
+        </div>
+      </section>
+
+      <!-- Workflow Timeline -->
+      <section id="workflow-timeline" class="glass-card section-anchor">
+        <h2 class="section-heading">Complete 13-Stage Blood DNA Journey</h2>
+        <div class="timeline-wrapper">
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-blue);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 1–4: Collection & Lysis</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">EDTA venipuncture, RBC lysis, WBC isolation, and Proteinase K digestion.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-blue);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 5–13: Column Binding to PCR Verification</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Silica matrix binding, ethanol washes, elution, Nanodrop, and PCR gel diagnostic.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section id="references" class="glass-card section-anchor">
+        <h2 class="section-heading">References</h2>
+        <ol style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          <li>Vogelstein, B., & Gillespie, D. (1979). Preparative and analytical purification of DNA from agarose. <em>PNAS</em>, 76(2), 615-619.</li>
+          <li>CLSI Guidelines (2018). Molecular Diagnostic Methods for Genetic Diseases. 3rd Edition.</li>
+        </ol>
+      </section>
+
+      <!-- Footer Showcase Index -->
+      <footer class="collection-footer">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark);">Wet Lab DNA Extraction Series Collection</h3>
+        <div class="collection-grid">
+          <a href="wetlab-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">1. CTAB Plant DNA</div>
+            <div class="collection-card-desc">CTAB extraction from plant leaves with high polyphenols.</div>
+          </a>
+          <a href="wetlab-blood-dna-extraction.html" class="collection-card" style="border-color: var(--accent-blue);">
+            <div class="collection-card-title">2. Blood DNA</div>
+            <div class="collection-card-desc">Clinical genomic DNA isolation using spin columns.</div>
+          </a>
+          <a href="wetlab-hair-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">3. Hair DNA</div>
+            <div class="collection-card-desc">Forensic hair follicle DNA extraction with Proteinase K.</div>
+          </a>
+          <a href="wetlab-sperm-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">4. Sperm DNA</div>
+            <div class="collection-card-desc">Protamine breakdown via DTT for forensic genetics.</div>
+          </a>
+          <a href="wetlab-saliva-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">5. Saliva DNA</div>
+            <div class="collection-card-desc">Non-invasive oral cell DNA prep with Qubit quantification.</div>
+          </a>
+          <a href="dna-sequencing-workflow.html" class="collection-card" style="border-color: #2563eb;">
+            <div class="collection-card-title">Bridge: Sequencing &rarr;</div>
+            <div class="collection-card-desc">Handoff from purified DNA to NGS & Bioinformatics.</div>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="assets/js/wetlab-shared.js"></script>
+  <script src="assets/js/blood-dna.js"></script>
+</body>
+</html>

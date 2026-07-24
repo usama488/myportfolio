@@ -1,0 +1,19 @@
+/* Fresh Teal/Green Styling for Saliva & Buccal DNA Extraction */
+:root {
+  --page-accent: var(--accent-teal);
+  --page-accent-light: #14b8a6;
+}
+
+.hero-wrapper {
+  border-top: 4px solid var(--accent-teal);
+}
+
+.toc-link.active {
+  background: #ccfbf1;
+  color: var(--accent-teal);
+  border-left-color: var(--accent-teal);
+}
+
+.step-badge {
+  background: var(--accent-teal);
+}

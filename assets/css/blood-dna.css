@@ -1,0 +1,19 @@
+/* Clinical Blue Page Styling for Blood DNA Extraction */
+:root {
+  --page-accent: var(--accent-blue);
+  --page-accent-light: var(--accent-blue-light);
+}
+
+.hero-wrapper {
+  border-top: 4px solid var(--accent-blue);
+}
+
+.toc-link.active {
+  background: #eff6ff;
+  color: var(--accent-blue);
+  border-left-color: var(--accent-blue);
+}
+
+.step-badge {
+  background: var(--accent-blue);
+}

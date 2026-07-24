@@ -1,0 +1,19 @@
+/* Forensic Purple Styling for Hair DNA Extraction */
+:root {
+  --page-accent: var(--accent-purple);
+  --page-accent-light: #a855f7;
+}
+
+.hero-wrapper {
+  border-top: 4px solid var(--accent-purple);
+}
+
+.toc-link.active {
+  background: #f3e8ff;
+  color: var(--accent-purple);
+  border-left-color: var(--accent-purple);
+}
+
+.step-badge {
+  background: var(--accent-purple);
+}

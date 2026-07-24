@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNA Sequencing Workflow | Bridge: Wet Lab to Bioinformatics</title>
+  <meta name="description" content="Complete Genomic DNA Sequencing Workflow: From purified DNA extraction handoff to Sanger, NGS Illumina, Oxford Nanopore platforms, FASTQ generation, and Bioinformatics analysis pipeline.">
+  <link rel="stylesheet" href="assets/css/wetlab-shared.css">
+  <link rel="stylesheet" href="assets/css/sequencing.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-container">
+    <div id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Top Series Navigation Strip -->
+  <nav class="series-nav-bar">
+    <a href="index.html" class="back-link">
+      <ion-icon name="arrow-back-outline"></ion-icon> &larr; Back to Portfolio
+    </a>
+    <div class="series-links">
+      <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Scientific Bridge:</span>
+      <a href="wetlab-dna-extraction.html" class="series-pill plant">1. CTAB Plant DNA</a>
+      <a href="wetlab-blood-dna-extraction.html" class="series-pill blood">2. Blood DNA</a>
+      <a href="wetlab-hair-dna-extraction.html" class="series-pill hair">3. Hair DNA</a>
+      <a href="wetlab-sperm-dna-extraction.html" class="series-pill sperm">4. Sperm DNA</a>
+      <a href="wetlab-saliva-dna-extraction.html" class="series-pill saliva">5. Saliva DNA</a>
+      <a href="dna-sequencing-workflow.html" class="series-pill sequencing active">Bridge: Sequencing</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+
+    <!-- Sticky TOC -->
+    <aside class="toc-sidebar">
+      <h3 class="toc-title">Sequencing TOC</h3>
+      <ul class="toc-list">
+        <li><a href="#overview" class="toc-link">Sequencing Overview</a></li>
+        <li><a href="#step-1" class="toc-link">Step 1: Wet Lab DNA Handoff</a></li>
+        <li><a href="#step-2" class="toc-link">Step 2: Fragmentation</a></li>
+        <li><a href="#step-3" class="toc-link">Step 3: End Repair & Adapters</a></li>
+        <li><a href="#step-4" class="toc-link">Step 4: Library Prep</a></li>
+        <li><a href="#step-5" class="toc-link">Step 5: Library Quality Check</a></li>
+        <li><a href="#platforms" class="toc-link">Sequencing Platforms</a></li>
+        <li><a href="#fastq" class="toc-link">FASTQ & Base Calling</a></li>
+        <li><a href="#chromatogram" class="toc-link">Sanger Chromatogram</a></li>
+        <li><a href="#bioinformatics-handoff" class="toc-link">Handoff to Bioinformatics</a></li>
+        <li><a href="#graphs" class="toc-link">Graph Interpretation</a></li>
+        <li><a href="#workflow-timeline" class="toc-link">Final Timeline</a></li>
+        <li><a href="#references" class="toc-link">References</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-article">
+
+      <!-- Hero Section -->
+      <section class="hero-wrapper">
+        <div class="hero-header">
+          <span class="hero-subtitle" style="color: #2563eb;">Scientific Bridge Page (Wet Lab &rarr; Computational Handoff)</span>
+          <h1 class="hero-title">DNA Sequencing Workflow: From Purified DNA to Genetic Information</h1>
+          <p class="hero-description">
+            The vital connecting link in molecular genomics: receiving high-purity DNA from any of my 5 Wet Lab extraction protocols, constructing sequencing libraries, generating raw FASTQ reads via Illumina & Nanopore platforms, and feeding data directly into bioinformatics pipelines.
+          </p>
+        </div>
+
+        <div class="hero-meta-strip">
+          <span class="info-chip"><strong>Input:</strong> Purified Genomic DNA</span>
+          <span class="info-chip"><strong>Output:</strong> FASTQ / Chromatogram Files</span>
+          <span class="info-chip"><strong>Platforms:</strong> Sanger, Illumina NGS, Oxford Nanopore</span>
+          <span class="info-chip"><strong>Author:</strong> Usama Bin Ali (Bioinformatics Researcher)</span>
+          <span class="info-chip" id="read-time-badge">~12 min read</span>
+        </div>
+
+        <div class="hero-collage">
+          <div class="hero-img-box"><img src="assets/images/sequencing/hero-illumina.jpg" alt="Illumina NGS sequencing machine"></div>
+          <div class="hero-img-box"><img src="assets/images/sequencing/hero-nanopore.jpg" alt="Oxford Nanopore MinION sequencer"></div>
+          <div class="hero-img-box"><img src="assets/images/sequencing/hero-chromatogram.jpg" alt="Sanger chromatogram fluorescence peaks"></div>
+          <div class="hero-img-box"><img src="assets/images/sequencing/hero-fastq-screen.jpg" alt="FASTQ raw sequence terminal view"></div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section id="overview" class="glass-card section-anchor">
+        <h2 class="section-heading">Overview of DNA Sequencing</h2>
+        <p>
+          DNA sequencing determines the exact order of nucleotide bases (&Adenine;, &Thymine;, &Guanine;, &Cytosine;) within a DNA molecule.
+        </p>
+
+        <div class="seq-code-snippet">
+          # Example 50-bp Nucleotide Sequence Read:<br>
+          5'- ATGCGTAGCTGATCGATCGATCGATCGATCGATCGATCGATCGATCGA -3'
+        </div>
+      </section>
+
+      <!-- Steps 1 - 5 -->
+      <section id="step-1" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">01</span> Wet Lab DNA Handoff</h2>
+        <p>
+          High-purity genomic DNA is delivered directly from any of my 5 Wet Lab projects:
+        </p>
+        <div class="grid-cards" style="margin-top: 12px;">
+          <a href="wetlab-dna-extraction.html" class="icon-card" style="text-decoration: none;">
+            <h4 style="color: var(--accent-green); font-weight: 600;">1. CTAB Plant DNA</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">High molecular weight plant genomic DNA.</p>
+          </a>
+          <a href="wetlab-blood-dna-extraction.html" class="icon-card" style="text-decoration: none;">
+            <h4 style="color: var(--accent-blue); font-weight: 600;">2. Blood DNA</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Ultra-pure clinical human leukocyte DNA.</p>
+          </a>
+          <a href="wetlab-hair-dna-extraction.html" class="icon-card" style="text-decoration: none;">
+            <h4 style="color: var(--accent-purple); font-weight: 600;">3. Hair DNA</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Forensic hair follicle root genomic DNA.</p>
+          </a>
+          <a href="wetlab-sperm-dna-extraction.html" class="icon-card" style="text-decoration: none;">
+            <h4 style="color: var(--accent-indigo); font-weight: 600;">4. Sperm DNA</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">DTT-reduced protamine sperm DNA.</p>
+          </a>
+          <a href="wetlab-saliva-dna-extraction.html" class="icon-card" style="text-decoration: none;">
+            <h4 style="color: var(--accent-teal); font-weight: 600;">5. Saliva DNA</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Qubit quantified oral cheek cell DNA.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="step-2" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">02</span> DNA Fragmentation</h2>
+        <p>Acoustic sonication (Covaris) or enzymatic transposase cleavage fragments long genomic DNA into 300–500 bp inserts suitable for short-read sequencing platforms.</p>
+      </section>
+
+      <section id="step-3" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">03</span> End Repair & Adapter Ligation</h2>
+        <p>DNA ends are repaired, A-tailed, and ligated with synthetic platform-specific oligonucleotide adapters containing sample index barcodes.</p>
+      </section>
+
+      <section id="step-4" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">04</span> Library Amplification & Preparation</h2>
+        <p>Low-cycle high-fidelity PCR amplifies adapter-ligated DNA fragments into a sequencing library.</p>
+      </section>
+
+      <section id="step-5" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">05</span> Library Quality Assessment</h2>
+        <p>Library fragment size distribution is verified on an Agilent Bioanalyzer (expected peak ~450 bp) and quantified using Qubit dsDNA HS assay.</p>
+      </section>
+
+      <!-- Step 6: Platforms -->
+      <section id="platforms" class="glass-card section-anchor">
+        <h2 class="section-heading">Major DNA Sequencing Platforms</h2>
+        <div class="grid-cards">
+          <div class="icon-card" style="border-top: 4px solid #2563eb;">
+            <h4 style="color: #2563eb; font-weight: 600;">Sanger Sequencing (1st Gen)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Capillary electrophoresis with ddNTP chain terminators. Read length: 800–1000 bp. Accuracy: &gt;99.99%.</p>
+          </div>
+          <div class="icon-card" style="border-top: 4px solid #7c3aed;">
+            <h4 style="color: #7c3aed; font-weight: 600;">Illumina NGS (2nd Gen)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Reversible terminator sequencing-by-synthesis (SBS). Billions of short paired-end reads (150–300 bp).</p>
+          </div>
+          <div class="icon-card" style="border-top: 4px solid #0d9488;">
+            <h4 style="color: #0d9488; font-weight: 600;">Oxford Nanopore (3rd Gen)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Direct ionic current changes through protein nanopores. Real-time ultra-long reads (&gt;100 kb).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 7 & 8: FASTQ -->
+      <section id="fastq" class="glass-card section-anchor">
+        <h2 class="section-heading">FASTQ File Format & Base Calling</h2>
+        <p>Raw optical signals are base-called into FASTQ text records consisting of 4 lines per read:</p>
+
+        <div class="seq-code-snippet">
+          @SEQ_ID_001:ILLUMINA:7:1101:1234:2000 1:N:0:ATCACG<br>
+          GATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGA<br>
+          +<br>
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        </div>
+      </section>
+
+      <!-- Step 9: Sanger Chromatogram -->
+      <section id="chromatogram" class="glass-card section-anchor">
+        <h2 class="section-heading">Sanger Chromatogram Peak Analysis</h2>
+        <p>Sanger capillary electrophoresis outputs 4-color fluorescence peak traces representing A (Green), C (Blue), G (Black), and T (Red).</p>
+        
+        <div class="comparison-slider-container">
+          <img src="assets/images/sequencing/chromatogram-clean.jpg" alt="Clean Resolved Sanger Peaks" class="comparison-img">
+          <div class="comparison-overlay">
+            <img src="assets/images/sequencing/chromatogram-overlapping.jpg" alt="Overlapping Noisy Sanger Trace">
+          </div>
+          <div class="comparison-handle">&harr;</div>
+          <span class="comparison-label label-before">Overlapping / Noisy Peaks</span>
+          <span class="comparison-label label-after">Clean Resolved Sanger Trace</span>
+        </div>
+      </section>
+
+      <!-- Handoff to Bioinformatics -->
+      <section id="bioinformatics-handoff" class="glass-card section-anchor" style="border: 2px solid #2563eb; background: linear-gradient(135deg, #ffffff, #eff6ff);">
+        <h2 class="section-heading" style="color: #2563eb;">
+          <ion-icon name="git-network-outline"></ion-icon>
+          Transition to Bioinformatics Pipeline
+        </h2>
+        <p style="font-size: 1.05rem; color: var(--text-dark); margin-bottom: 20px;">
+          Once raw FASTQ sequencing files are generated, the wet lab experimental phase is complete. Data transitions immediately into downstream computational processing:
+        </p>
+
+        <div class="flow-diagram">
+          <div class="flow-step">1. Raw FASTQ Data</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">2. FastQC Quality Control</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">3. BWA / STAR Alignment</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">4. GATK Variant Calling</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">5. Biological Discovery</div>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+          <a href="index.html#services" class="info-chip" style="background: linear-gradient(135deg, #2563eb, #7c3aed); color: #ffffff; padding: 12px 28px; font-size: 1rem; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+            Explore my full Bioinformatics Pipeline Service &rarr;
+          </a>
+        </div>
+      </section>
+
+      <!-- Graphs -->
+      <section id="graphs" class="glass-card section-anchor">
+        <h2 class="section-heading">Graph & Quality Score Interpretation</h2>
+        <div class="grid-cards">
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--text-dark);">Phred Quality Score (Q30)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Q30 represents 1 error per 1,000 base calls (99.9% accuracy standard for NGS).</p>
+          </div>
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--text-dark);">Coverage Depth Plot</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Average 30X genome coverage ensures accurate heterozygous variant detection.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow Timeline -->
+      <section id="workflow-timeline" class="glass-card section-anchor">
+        <h2 class="section-heading">Complete 11-Stage Sequencing Journey</h2>
+        <div class="timeline-wrapper">
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: #2563eb;"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 1–5: DNA Handoff & Library Preparation</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Purified DNA intake from Wet Lab, sonication fragmentation, adapter ligation, and Bioanalyzer QC.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: #7c3aed;"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 6–11: Flow Cell Sequencing & FASTQ Handoff</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Illumina SBS or Nanopore run, base calling, FASTQ generation, and transfer to Bioinformatics pipeline.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section id="references" class="glass-card section-anchor">
+        <h2 class="section-heading">References</h2>
+        <ol style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          <li>Sanger, F., Nicklen, S., & Coulson, A. R. (1977). DNA sequencing with chain-terminating inhibitors. <em>PNAS</em>, 74(12), 5463-5467.</li>
+          <li>Bentley, D. R., et al. (2008). Accurate whole human genome sequencing using reversible terminator chemistry. <em>Nature</em>, 456(7218), 53-59.</li>
+        </ol>
+      </section>
+
+      <!-- Footer Showcase Index -->
+      <footer class="collection-footer">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark);">Wet Lab DNA Extraction Series Collection</h3>
+        <div class="collection-grid">
+          <a href="wetlab-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">1. CTAB Plant DNA</div>
+            <div class="collection-card-desc">CTAB extraction from plant leaves with high polyphenols.</div>
+          </a>
+          <a href="wetlab-blood-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">2. Blood DNA</div>
+            <div class="collection-card-desc">Clinical genomic DNA isolation using spin columns.</div>
+          </a>
+          <a href="wetlab-hair-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">3. Hair DNA</div>
+            <div class="collection-card-desc">Forensic hair follicle DNA extraction with Proteinase K.</div>
+          </a>
+          <a href="wetlab-sperm-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">4. Sperm DNA</div>
+            <div class="collection-card-desc">Protamine breakdown via DTT for forensic genetics.</div>
+          </a>
+          <a href="wetlab-saliva-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">5. Saliva DNA</div>
+            <div class="collection-card-desc">Non-invasive oral cell DNA prep with Qubit quantification.</div>
+          </a>
+          <a href="dna-sequencing-workflow.html" class="collection-card" style="border-color: #2563eb;">
+            <div class="collection-card-title">Bridge: Sequencing &rarr;</div>
+            <div class="collection-card-desc">Handoff from purified DNA to NGS & Bioinformatics.</div>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="assets/js/wetlab-shared.js"></script>
+  <script src="assets/js/sequencing.js"></script>
+</body>
+</html>

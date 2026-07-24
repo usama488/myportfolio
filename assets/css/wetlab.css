@@ -1,0 +1,19 @@
+/* Page-specific styling for CTAB Plant DNA Extraction */
+:root {
+  --page-accent: var(--accent-green);
+  --page-accent-light: var(--accent-green-light);
+}
+
+.hero-wrapper {
+  border-top: 4px solid var(--accent-green);
+}
+
+.toc-link.active {
+  background: #f0fdf4;
+  color: var(--accent-green);
+  border-left-color: var(--accent-green);
+}
+
+.step-badge {
+  background: var(--accent-green);
+}

@@ -1,0 +1,32 @@
+/* High-Tech Blue/Purple Styling for DNA Sequencing Handoff Page */
+:root {
+  --page-accent: #2563eb;
+  --page-accent-light: #7c3aed;
+}
+
+.hero-wrapper {
+  border-top: 4px solid #2563eb;
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.9), rgba(245, 243, 255, 0.8));
+}
+
+.toc-link.active {
+  background: #eff6ff;
+  color: #2563eb;
+  border-left-color: #2563eb;
+}
+
+.step-badge {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.seq-code-snippet {
+  background: #0f172a;
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  overflow-x: auto;
+  margin: 16px 0;
+  line-height: 1.5;
+}

@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usama Bin Ali - Portfolio</title>
+  
+  <title>Usama Bin Ali — Bioinformatics, Data Science & AI Portfolio</title>
 
-  <!--
-    - favicon
-  -->
-    
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Usama Bin Ali - MPhil Bioinformatics Student, Data Scientist, and AI Engineer specializing in computational biology, machine learning, and healthcare AI.">
+  <meta name="theme-color" content="#080b16">
+  
+  <meta property="og:title" content="Usama Bin Ali — Portfolio">
+  <meta property="og:description" content="MPhil Bioinformatics Student, Data Scientist, and AI Engineer portfolio featuring machine learning, bioinformatics pipelines, and web applications.">
+  <meta property="og:image" content="./assets/images/portfolio prfle.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="./assets/images/portfolio prfle.png" type="image/x-icon">
-<!--- 
-  hi
-  -->
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
   <!--
-    - #MAIN
+    - #MAIN CONTAINER
   -->
-
   <main>
 
     <!--
-      - #SIDEBAR
+      - #SIDEBAR HERO
     -->
-
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-           <img src="./assets/images/portfolio prfle.png" alt="Profile Picture" width="80">
+          <img src="./assets/images/portfolio prfle.png" alt="Usama Bin Ali Profile Picture" width="80">
         </figure>
-
 
         <div class="info-content">
           <h1 class="name" title="Usama Bin Ali">Usama Bin Ali</h1>
-
-          <p class="title">Bioinformaticion</p>
+          <p class="title">Bioinformatician</p>
+          <button class="voice-intro-btn" onclick="playVoiceIntro()" style="margin-top: 8px;">
+            <ion-icon name="volume-medium-outline"></ion-icon> Voice Intro
+          </button>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+        <!-- Global Theme Controls inside Sidebar -->
+        <div class="header-controls">
+          <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark and light mode">
+            <ion-icon name="sunny-outline"></ion-icon>
+          </button>
+          <button class="focus-toggle-btn" onclick="toggleFocusMode()" aria-label="Toggle focus mode">
+            <ion-icon name="eye-off-outline"></ion-icon>
+          </button>
+        </div>
 
+        <button class="info_more-btn" data-sidebar-btn aria-label="Show Contacts">
+          <span>Show Contacts</span>
           <ion-icon name="chevron-down"></ion-icon>
         </button>
 
@@ -70,338 +74,399 @@
         <ul class="contacts-list">
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
               <a href="mailto:usamabinali132@gmail.com" class="contact-link">usamabinali132@gmail.com</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-
               <a href="tel:+923189204386" class="contact-link">+923189204386</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">December 12,2001</time>
+              <time datetime="2001-12-12">December 12, 2001</time>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
-              <address>karak, kpk, pakistan .</address>
+              <address>Karak, KPK, Pakistan</address>
             </div>
-
           </li>
 
         </ul>
 
-       <div class="separator"></div>
+        <div class="separator"></div>
 
-<ul class="social-list">
+        <ul class="social-list">
 
-  <li class="social-item">
-    <a href="https://github.com/usama488" class="social-link" target="_blank">
-      <ion-icon name="logo-github"></ion-icon>
-    </a>
-  </li>
+          <li class="social-item">
+            <a href="https://github.com/usama488" class="social-link" target="_blank" aria-label="GitHub Profile">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
 
-  <li class="social-item">
-    <a href="https://www.kaggle.com/usamabinali" class="social-link" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" alt="Kaggle" style="width: 24px; height: 24px;">
-    </a>
-  </li>
+          <li class="social-item">
+            <a href="https://www.kaggle.com/usamabinali" class="social-link" target="_blank" aria-label="Kaggle Profile">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" alt="Kaggle Logo" style="width: 20px; height: 20px;">
+            </a>
+          </li>
 
-  <li class="social-item">
-    <a href="https://www.linkedin.com/in/usama-bin-ali-40a8502b0/" class="social-link" target="_blank">
-      <ion-icon name="logo-linkedin"></ion-icon>
-    </a>
-  </li>
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/usama-bin-ali-40a8502b0/" class="social-link" target="_blank" aria-label="LinkedIn Profile">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
 
-  <li class="social-item">
-    <a href="https://www.instagram.com/usamabinali132/" class="social-link" target="_blank">
-      <ion-icon name="logo-instagram"></ion-icon>
-    </a>
-  </li>
+          <li class="social-item">
+            <a href="https://www.instagram.com/usamabinali132/" class="social-link" target="_blank" aria-label="Instagram Profile">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
 
-  <li class="social-item">
-    <a href="https://x.com/UsamaBinAl50820" class="social-link" target="_blank">
-      <ion-icon name="logo-twitter"></ion-icon>
-    </a>
-  </li>
+          <li class="social-item">
+            <a href="https://x.com/UsamaBinAl50820" class="social-link" target="_blank" aria-label="X Twitter Profile">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
 
-</ul>
+        </ul>
 
-</div>
-
-
+      </div>
 
     </aside>
 
 
-
-
-
     <!--
-      - #main-content
+      - #MAIN CONTENT
     -->
-
     <div class="main-content">
 
       <!--
         - #NAVBAR
       -->
-
       <nav class="navbar">
-
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link>About</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Certifications</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
-
         </ul>
-
       </nav>
 
 
-
-
-
       <!--
-        - #ABOUT
+        - #ABOUT PAGE
       -->
-
-      <article class="about  active" data-page="about">
+      <article class="about active" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
 
+        <!-- Dynamic Time Greeting Banner -->
+        <div class="time-greeting-banner">
+          <span id="time-greeting">Welcome to my portfolio!</span>
+          <span style="font-size: 11px; color: var(--text-dim);">⚡ Client-Side AI Powered</span>
+        </div>
+
         <section class="about-text">
           <p>
             I am an MPhil Bioinformatics student with expertise in computational biology and data science. I have completed formal training in Data Science, developing strong skills in data analysis, machine learning, and research-driven problem solving I am passionate about transforming complex biological data into actionable insights and contributing to innovative, data-driven research at the intersection of bioinformatics, data science, and healthcare.
           </p>
-
         </section>
 
-        
-        <!--
-          - service
-        -->
+        <!-- Stats Counter Section -->
+        <section class="stats-container">
+          <div class="stat-card">
+            <div class="stat-number" data-target="30">0+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="4">0+</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="7">0+</div>
+            <div class="stat-label">Months Exp</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="10">0+</div>
+            <div class="stat-label">Services</div>
+          </div>
+        </section>
 
+        <!-- Interactive ML Model Demo Card -->
+        <section class="ml-demo-section">
+          <h3 class="h3 service-title">Try My ML Model (Live Demo)</h3>
+          <div class="ml-demo-card">
+            <h4 class="h4" style="color: var(--accent-cyan); font-size: 15px;">🧠 Cardiovascular Disease Risk Predictor</h4>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Adjust clinical parameters below to compute real-time ML risk prediction score using client-side logistic decision trees.</p>
+            
+            <div class="ml-demo-grid">
+              <div class="ml-input-group">
+                <label for="ml-age">Age (years)</label>
+                <input type="number" id="ml-age" value="48" min="18" max="90">
+              </div>
+              <div class="ml-input-group">
+                <label for="ml-bmi">BMI (kg/m²)</label>
+                <input type="number" id="ml-bmi" value="27.4" step="0.1" min="15" max="50">
+              </div>
+              <div class="ml-input-group">
+                <label for="ml-bps">Blood Pressure (mmHg)</label>
+                <input type="number" id="ml-bps" value="132" min="80" max="220">
+              </div>
+              <div class="ml-input-group">
+                <label for="ml-chol">Cholesterol (mg/dL)</label>
+                <input type="number" id="ml-chol" value="210" min="100" max="400">
+              </div>
+            </div>
+
+            <button class="ml-predict-btn" onclick="runMLPredictor()">
+              ⚡ Run Prediction Model
+            </button>
+
+            <div class="ml-result-box" id="ml-result-box">
+              <span style="font-size: 12px; color: var(--text-muted);">Estimated Disease Risk Score:</span>
+              <strong id="ml-result-score" style="font-size: 20px; color: var(--accent-cyan); margin-left: 8px;">0.0%</strong>
+              <span id="ml-result-badge" class="risk-badge low">LOW RISK</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive Terminal Widget -->
+        <section class="terminal-widget">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <div class="dot-btn dot-red"></div>
+              <div class="dot-btn dot-yellow"></div>
+              <div class="dot-btn dot-green"></div>
+            </div>
+            <div class="terminal-title">usama@devsil:~ (zsh)</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-output" id="terminal-output">
+              <div class="terminal-response">Welcome to Usama's interactive terminal! Type <span style="color:#00d4ff;">help</span> to view available commands.</div>
+            </div>
+            <div class="terminal-input-line">
+              <span class="terminal-prompt">usama@devsil:~$</span>
+              <input type="text" id="terminal-input" placeholder="type 'whoami', 'skills', 'projects', 'contact'..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </section>
+
+        <!-- Live GitHub Stats Embed Card -->
+        <section class="github-stats-section">
+          <h3 class="h3 service-title">GitHub Activity</h3>
+          <div class="github-stats-container">
+            <!-- EDIT: Change usama488 to your real GitHub username if needed -->
+            <img src="https://github-readme-stats.vercel.app/api?username=usama488&show_icons=true&theme=dark&hide_border=true&bg_color=0f1424&title_color=00d4ff&text_color=94a3b8&icon_color=8b5cf6" alt="Usama Bin Ali GitHub Stats" loading="lazy">
+          </div>
+        </section>
+
+        <!-- Services Section -->
         <section class="service">
 
           <h3 class="h3 service-title">What i'm doing</h3>
 
           <ul class="service-list">
 
-
-
-            <!--First responsibility-->
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/data-analysis.png
-                " alt="icon" width="40">
+                <ion-icon name="stats-chart-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Data Analytics</h4>
-
                 <p class="service-item-text">
-                  One of my favorite part of the project is Data Analysis.
-                  I Analyze the Data and solve complex problems with it.
+                  One of my favorite part of the project is Data Analysis. I Analyze the Data and solve complex problems with it.
                 </p>
               </div>
-
             </li>
 
-
-             <!--Second responsibility-->
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/training-model.png" alt="training-ai-model" width="40">
+                <ion-icon name="hardware-chip-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Machine Learning</h4>
-
                 <p class="service-item-text">
-                 I train AI models with best accuracy, remove robustness and overfitting from the trained model.
+                  I train AI models with best accuracy, remove robustness and overfitting from the trained model.
                 </p>
               </div>
-
             </li>
 
-
-            <!--Third responsibility-->
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/deployment.png" alt="mobile app icon" width="40">
+                <ion-icon name="eye-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Computer Vision</h4>
-
                 <p class="service-item-text">
                   I give vision power to AI Technologies.
                 </p>
               </div>
-
             </li>
-
-            <!--Fourth responsibility-->
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/consultency.png" alt="camera icon" width="40">
+                <ion-icon name="sparkles-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Generative AI</h4>
-
                 <p class="service-item-text">
-                   I made LLMs fine tuned, and build fuctional AI Apps for special purposes and Bussiness needs.
+                  I made LLMs fine tuned, and build fuctional AI Apps for special purposes and Bussiness needs.
                 </p>
               </div>
-
             </li>
 
-            <!--Fifth responsibility-->
-
-              <li class="service-item">
-
+            <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/consultency.png" alt="camera icon" width="40">
+                <ion-icon name="people-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">AI Agents Development</h4>
-
                 <p class="service-item-text">
                   I build AI Agents for saving the time taken by humans on repitive and logical tasks.
                 </p>
               </div>
-
             </li>
 
-            <!--Seventh responsibility-->
-
-              <li class="service-item">
-
+            <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/consultency.png" alt="camera icon" width="40">
+                <ion-icon name="flash-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">AI Automation</h4>
-
                 <p class="service-item-text">
                   I Automate tasks with AI that are repititive and time consuming.
                 </p>
               </div>
-
             </li>
 
-
-             <!--Eight responsibility-->
-
-              <li class="service-item">
-
+            <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/consultency.png" alt="camera icon" width="40">
+                <ion-icon name="cloud-upload-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">MLOPs</h4>
-
                 <p class="service-item-text">
                   I deploy your AI model on AWS cloud services.
                 </p>
               </div>
-
             </li>
 
-             <!--Ninth responsibility-->
-
-              <li class="service-item">
-
+            <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/consultency.png" alt="camera icon" width="40">
+                <ion-icon name="briefcase-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Consultency</h4>
-
                 <p class="service-item-text">
                   Provide Consultency to my clients about solving their business problems through data provided by them.
                 </p>
               </div>
+            </li>
 
+            <!-- NEW REQUIRED SERVICE: Wet Lab DNA Extraction Collection -->
+            <li class="service-item" style="grid-column: span 2; background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 16px; padding: 24px;">
+              <div class="service-icon-box" style="margin-bottom: 12px;">
+                <ion-icon name="flask-outline" style="font-size: 2.2rem; color: #00d4ff;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                  <h4 class="h4 service-item-title" style="margin: 0;">Wet Lab DNA Extraction Portfolio (5-Part Series)</h4>
+                  <span style="font-size: 0.75rem; background: rgba(0,212,255,0.15); color: #00d4ff; padding: 4px 10px; border-radius: 12px; border: 1px solid rgba(0,212,255,0.3); font-weight: 600;">Published Protocols</span>
+                </div>
+                <p class="service-item-text" style="margin-top: 8px; margin-bottom: 16px; color: #94a3b8;">
+                  Complete, hands-on molecular biology laboratory protocols from sample collection to PCR amplification, agarose gel electrophoresis, and Qubit/Nanodrop quality analysis:
+                </p>
+
+                <!-- Project Links Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-bottom: 16px;">
+                  <a href="wetlab-dna-extraction.html" style="background: rgba(15, 118, 110, 0.2); border: 1px solid rgba(22, 163, 74, 0.4); padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #4ade80;">1. CTAB Plant DNA</div>
+                    <div style="font-size: 0.75rem; color: #cbd5e1;">Plant leaf CTAB lysis & PCR</div>
+                  </a>
+                  <a href="wetlab-blood-dna-extraction.html" style="background: rgba(29, 78, 216, 0.2); border: 1px solid rgba(14, 165, 233, 0.4); padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #38bdf8;">2. Blood DNA</div>
+                    <div style="font-size: 0.75rem; color: #cbd5e1;">Clinical spin column & EDTA</div>
+                  </a>
+                  <a href="wetlab-hair-dna-extraction.html" style="background: rgba(139, 92, 246, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #c084fc;">3. Hair DNA</div>
+                    <div style="font-size: 0.75rem; color: #cbd5e1;">Forensic keratin digestion</div>
+                  </a>
+                  <a href="wetlab-sperm-dna-extraction.html" style="background: rgba(79, 70, 229, 0.2); border: 1px solid rgba(99, 102, 241, 0.4); padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #818cf8;">4. Sperm DNA</div>
+                    <div style="font-size: 0.75rem; color: #cbd5e1;">DTT protamine reduction</div>
+                  </a>
+                  <a href="wetlab-saliva-dna-extraction.html" style="background: rgba(13, 148, 136, 0.2); border: 1px solid rgba(20, 184, 166, 0.4); padding: 10px; border-radius: 8px; text-decoration: none; color: #ffffff; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #2dd4bf;">5. Saliva DNA</div>
+                    <div style="font-size: 0.75rem; color: #cbd5e1;">Oral swab & Qubit assay</div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- SCIENTIFIC BRIDGE: DNA Sequencing Workflow -->
+            <li class="service-item" style="grid-column: span 2; background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2)); border: 1px dashed rgba(56, 189, 248, 0.5); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <ion-icon name="hardware-chip-outline" style="font-size: 1.8rem; color: #38bdf8;"></ion-icon>
+                <div>
+                  <h5 style="margin: 0; color: #ffffff; font-size: 0.95rem; font-weight: 600;">Scientific Handoff Bridge: DNA Sequencing Workflow</h5>
+                  <p style="margin: 2px 0 0; font-size: 0.8rem; color: #94a3b8;">Connecting purified Wet Lab DNA samples to Sanger, NGS Illumina & Nanopore FASTQ data generation.</p>
+                </div>
+              </div>
+              <a href="dna-sequencing-workflow.html" style="background: #2563eb; color: #ffffff; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: background 0.2s;">View Sequencing Protocol &rarr;</a>
+            </li>
+
+            <!-- SERVICE: Bioinformatics Pipeline -->
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="git-network-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Bioinformatics Pipeline</h4>
+                <p class="service-item-text">
+                  Building end-to-end computational biology pipelines covering raw genomic sequence preprocessing, alignment, variant calling, structural analysis, and biological data visualization.
+                </p>
+              </div>
             </li>
 
           </ul>
 
         </section>
 
-        <!--
-          - testimonials
-        -->
-
+        <!-- Testimonials -->
         <section class="testimonials">
 
           <h3 class="h3 testimonials-title">Testimonials</h3>
@@ -410,82 +475,57 @@
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/clients/maazali.png" alt="Maaz Ali" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/clients/maazali.png" alt="Maaz Ali Client Avatar" width="60" data-testimonials-avatar>
                 </figure>
-
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Maaz Ali</h4>
-
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    usama bin ali is ability to turn raw data into actionable insights is truly impressive. He handled our data
-                    preprocessing and analysis with precision and produced results that directly impacted our business
-                    decisions. His dedication and technical expertise made a complex task look simple.
+                    usama bin ali is ability to turn raw data into actionable insights is truly impressive. He handled our data preprocessing and analysis with precision and produced results that directly impacted our business decisions. His dedication and technical expertise made a complex task look simple.
                   </p>
                 </div>
-
               </div>
             </li>
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/clients/dramitmitlal.png" alt="Dr. Amit Mittal" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/clients/dramitmitlal.png" alt="Dr. Amit Mittal Client Avatar" width="60" data-testimonials-avatar>
                 </figure>
-
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Dr. Amit Mittal</h4>
-
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    When it comes to end-to-end data solutions, usama bin ali is the go-to professional. I worked with him on a project
-                    requiring data modeling and deployment, and I was amazed by how smoothly the process went. His ability to
-                    navigate challenges and deliver on time, all while maintaining high-quality standards, made him an
-                    indispensable part of our team.
+                    When it comes to end-to-end data solutions, usama bin ali is the go-to professional. I worked with him on a project requiring data modeling and deployment, and I was amazed by how smoothly the process went. His ability to navigate challenges and deliver on time, all while maintaining high-quality standards, made him an indispensable part of our team.
                   </p>
                 </div>
-
               </div>
             </li>
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/clients/samri.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/clients/samri.png" alt="Emily evans Client Avatar" width="60" data-testimonials-avatar>
                 </figure>
-
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Our collaboration with usama bin ali was a game-changer. He not only brought strong technical skills but also a
-                    deep understanding of how to make data work for our business. His ability to create seamless data pipelines
-                    saved us countless hours, and his clear communication made the entire project stress-free.
+                    Our collaboration with usama bin ali was a game-changer. He not only brought strong technical skills but also a deep understanding of how to make data work for our business. His ability to create seamless data pipelines saved us countless hours, and his clear communication made the entire project stress-free.
                   </p>
                 </div>
-
               </div>
             </li>
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/clients/Braxton.png" alt="Henry william" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/clients/Braxton.png" alt="Henry william Client Avatar" width="60" data-testimonials-avatar>
                 </figure>
-
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    I’ve worked with several data professionals, but usama bin ali stands out for his holistic approach. He didn’t just
-                    provide data models; he ensured they were fully integrated into our system, ready to be used. His attention
-                    to detail and commitment to delivering exceptional work have set a new standard for our future collaborations.
+                    I’ve worked with several data professionals, but usama bin ali stands out for his holistic approach. He didn’t just provide data models; he ensured they were fully integrated into our system, ready to be used. His attention to detail and commitment to delivering exceptional work have set a new standard for our future collaborations.
                   </p>
                 </div>
-
               </div>
             </li>
 
@@ -493,116 +533,60 @@
 
         </section>
 
-
-        <!--
-          - testimonials modal
-        -->
-
+        <!-- Testimonials Modal -->
         <div class="modal-container" data-modal-container>
-
           <div class="overlay" data-overlay></div>
-
           <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
+            <button class="modal-close-btn" data-modal-close-btn aria-label="Close modal">
               <ion-icon name="close-outline"></ion-icon>
             </button>
-
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                <img src="./assets/images/avatar-1.png" alt="Client Avatar" width="80" data-modal-img>
               </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              <img src="./assets/images/icon-quote.svg" alt="Quote icon">
             </div>
-
             <div class="modal-content">
-
               <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
               <time datetime="2021-06-14">14 June, 2021</time>
-
               <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
+                <p>Testimonial details</p>
               </div>
-
             </div>
-
           </section>
-
         </div>
 
-
-        <!--
-          - clients
-        -->
-
+        <!-- Clients Section -->
         <section class="clients">
-
           <h3 class="h3 clients-title">Clients</h3>
-
           <ul class="clients-list has-scrollbar">
-
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png"
-                alt="client logo">
-              </a>
+              <a href="#"><img src="./assets/images/logo-1-color.png" alt="Client Logo 1"></a>
             </li>
-
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png"
-                 alt="client logo">
-              </a>
+              <a href="#"><img src="./assets/images/logo-2-color.png" alt="Client Logo 2"></a>
             </li>
-
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png"
-                
-                 alt="client logo">
-              </a>
+              <a href="#"><img src="./assets/images/logo-3-color.png" alt="Client Logo 3"></a>
             </li>
-
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
+              <a href="#"><img src="./assets/images/logo-4-color.png" alt="Client Logo 4"></a>
             </li>
-
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
+              <a href="#"><img src="./assets/images/logo-5-color.png" alt="Client Logo 5"></a>
             </li>
-
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
+              <a href="#"><img src="./assets/images/logo-6-color.png" alt="Client Logo 6"></a>
             </li>
-
           </ul>
-
         </section>
 
       </article>
 
 
-
-
-
       <!--
-        - #RESUME
+        - #RESUME PAGE
       -->
-
       <article class="resume" data-page="resume">
 
         <header>
@@ -615,51 +599,33 @@
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Education</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">BS Bioinformatics</h4>
-
-              <span>In Progress.</span>
-
+              <span>In Progress</span>
               <p class="timeline-text">
-                  completed  BS Bioinformatics
-                   at khushal khan khattak university karak, Pakistan.
+                Completed BS Bioinformatics at Khushal Khan Khattak University Karak, Pakistan.
               </p>
-
             </li>
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">FSC</h4>
-
-              <span>2018 — 2019
-
-              </span>
-
+              <span>2018 — 2019</span>
               <p class="timeline-text">
-                I completed my FSC in 2019 at The Pearl model college mitha khel 
-                , marking a significant milestone in the timeline of FCS.
+                I completed my FSC in 2019 at The Pearl Model College Mitha Khel, marking a significant milestone.
               </p>
-
             </li>
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">MATRIC</h4>
-
               <span>2016 — 2017</span>
-
               <p class="timeline-text">
-                Matriculated from Rashid minhas shaheed public school mitha khel – paving the way for a bright academic future.
+                Matriculated from Rashid Minhas Shaheed Public School Mitha Khel – paving the way for a bright academic future.
               </p>
-
-
             </li>
 
           </ol>
@@ -670,386 +636,285 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Experience</h3>
           </div>
 
           <ol class="timeline-list">
 
-            
             <li class="timeline-item">
-              
               <h4 class="h4 timeline-item-title">Continuous Learner</h4>
-              
               <span>Till Death</span>
-              
               <p class="timeline-text">
                 While my professional experience might be limited, my commitment to growth is not. I have a strong passion for learning new technologies and solving complex problems. I actively seek out challenges to expand my skills and apply them to real-world scenarios. What I may lack in years of experience, I make up for with determination, curiosity, and a relentless drive to deliver impactful solutions.
               </p>
-              
             </li>
 
-
-            <
-            
-              
-            
-            
-
-
             <li class="timeline-item">
-          
               <h4 class="h4 timeline-item-title">Intern - Data Science</h4>
-          
-              <span>February 2025 — june 2026
-                
-              </span>
-          
+              <span>February 2025 — June 2026</span>
               <p class="timeline-text">
                 Completed a 7-month internship at Devsil, where I worked on data analysis and machine learning projects, gaining practical experience in data preprocessing, building predictive models, and generating business insights. Collaborated closely with senior data scientists and contributed to optimizing data pipelines.
               </p>
-          
             </li>
-          
+
           </ol>
-          
+
         </section>
 
+        <!-- Skills Section -->
         <section class="skill">
 
-          <h3 class="h3 skills-title">My Skills</h3>
-        
+          <h3 class="h3 skills-title">Domain Skills</h3>
+
           <ul class="skills-list content-card">
-        
-            <!-- Data Science Skills Section -->
-           
-        
+
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Data Analytics</h5>
                 <data value="80">80%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
-        
             </li>
-                      
-
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Machine Learning</h5>
                 <data value="83">83%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 83%;"></div>
               </div>
-        
             </li>
 
-
-        
             <li class="skills-item">
-        
               <div class="title-wrapper">
-                <h5 class="h5">Computer Vission</h5>
+                <h5 class="h5">Computer Vision</h5>
                 <data value="55">55%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 55%;"></div>
               </div>
-        
             </li>
 
-
-
-
             <li class="skills-item">
-        
               <div class="title-wrapper">
-                <h5 class="h5">GENERATIVE AI</h5>
+                <h5 class="h5">Generative AI</h5>
                 <data value="60">60%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 60%;"></div>
-                
-            
-            <li class="skills-item">
-        
-              <div class="title-wrapper">
-                <h5 class="h5">AI AUTOMATION</h5>
-                <data value="60">60%</data>
               </div>
-        
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-
             </li>
 
-
-
-            
-            
-            
             <li class="skills-item">
-              
               <div class="title-wrapper">
-                <h5 class="h5">AI AGENTS DEVELOPMENT</h5>
+                <h5 class="h5">AI Automation</h5>
+                <data value="60">60%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 60%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">AI Agents Development</h5>
                 <data value="70">70%</data>
               </div>
-              
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 70%;"></div>
               </div>
-              
             </li>
-            
-            
-            
+
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">MLOps</h5>
                 <data value="50">50%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 50%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Consultancy</h5>
                 <data value="85">85%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
-        
+            </li>
+
           </ul>
-        
-          <!-- Technical Skills Section -->
-          <h3 class="h3 skills-title">Technical Skills</h3>
-        
+
+          <h3 class="h3 skills-title" style="margin-top: 30px;">Technical Skills</h3>
+
           <ul class="skills-list content-card">
-        
+
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">GitHub</h5>
                 <data value="75">75%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 75%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">WordPress</h5>
                 <data value="75">75%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 75%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Docker</h5>
                 <data value="30">30%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 30%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">AWS</h5>
                 <data value="40">40%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 40%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">SQL</h5>
                 <data value="65">65%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 65%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Linux</h5>
                 <data value="30">30%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 30%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Jupyter Notebook</h5>
                 <data value="95">95%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 95%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">VS Code</h5>
                 <data value="93">93%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 93%;"></div>
               </div>
-        
             </li>
-        
+
           </ul>
-        
-          <!-- Additional Skills Section -->
-          <h3 class="h3 skills-title">Soft Skills</h3>
-        
+
+          <h3 class="h3 skills-title" style="margin-top: 30px;">Soft Skills</h3>
+
           <ul class="skills-list content-card">
-        
+
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Communication</h5>
                 <data value="80">80%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Problem Solving</h5>
                 <data value="100">100%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 100%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Team Work</h5>
                 <data value="85">85%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Leadership</h5>
                 <data value="80">80%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
-        
             </li>
 
             <li class="skills-item">
-        
               <div class="title-wrapper">
                 <h5 class="h5">Time Management</h5>
                 <data value="88">88%</data>
               </div>
-        
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 88%;"></div>
               </div>
-        
             </li>
-        
+
           </ul>
-        
+
         </section>
-        
 
       </article>
 
+
       <!--
-        - #CERTIFICATIONS
+        - #CERTIFICATIONS PAGE
       -->
-        
       <article class="blog" data-page="certifications">
 
         <header>
           <h2 class="h2 article-title">Certifications</h2>
         </header>
-      
+
         <section class="blog-posts">
           <ul class="blog-posts-list">
-      
-            <!-- Certification 1 -->
+
             <li class="blog-post-item">
-              <a href="https://shaheer.neufera.com/assets/images/certificates/certificate-1727174127490.jpg" target="_blank">
+              <a href="./assets/images/certificates/certificate-1727174127490.jpg" target="_blank">
                 <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/certificates/certificate-1727174127490.jpg" alt="Python Ka Chilla (40-Days)" loading="lazy">
+                  <img src="./assets/images/certificates/certificate-1727174127490.jpg" alt="Python Ka Chilla (40-Days) Certificate" loading="lazy">
                 </figure>
                 <div class="blog-content">
                   <div class="blog-meta">
@@ -1061,15 +926,11 @@
                 </div>
               </a>
             </li>
-      
-            <!-- Certification 2 -->
+
             <li class="blog-post-item">
-              <a href="https://shaheer.neufera.com/assets/images/certificates/certificate-1727172474795.jpg" target="_blank">
+              <a href="./assets/images/certificates/certificate-1727172474795.jpg" target="_blank">
                 <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/certificates/certificate-1727172474795.jpg" alt="Six Months Of AI and Data Science Mentorship Program" loading="lazy">
+                  <img src="./assets/images/certificates/certificate-1727172474795.jpg" alt="Six Months Of AI and Data Science Mentorship Program Certificate" loading="lazy">
                 </figure>
                 <div class="blog-content">
                   <div class="blog-meta">
@@ -1081,15 +942,11 @@
                 </div>
               </a>
             </li>
-      
-            <!-- Certification 3 -->
+
             <li class="blog-post-item">
-              <a href="https://shaheer.neufera.com/assets/images/certificates/7401152_1727187204.jpg" target="_blank">
+              <a href="./assets/images/certificates/7401152_1727187204.jpg" target="_blank">
                 <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/certificates/7401152_1727187204.jpg" alt="Python For Machine Learning" loading="lazy">
+                  <img src="./assets/images/certificates/7401152_1727187204.jpg" alt="Python For Machine Learning Certificate" loading="lazy">
                 </figure>
                 <div class="blog-content">
                   <div class="blog-meta">
@@ -1102,14 +959,10 @@
               </a>
             </li>
 
-             <!-- Certification 4 -->
-             <li class="blog-post-item">
-              <a href="https://shaheer.neufera.com/assets/images/certificates/certificate.png" target="_blank">
+            <li class="blog-post-item">
+              <a href="./assets/images/certificates/certificate.png" target="_blank">
                 <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/certificates/certificate.png" alt="Python For Machine Learning" loading="lazy">
+                  <img src="./assets/images/certificates/certificate.png" alt="Retrieval Augmented Generation (RAG) with LangChain Certificate" loading="lazy">
                 </figure>
                 <div class="blog-content">
                   <div class="blog-meta">
@@ -1121,15 +974,16 @@
                 </div>
               </a>
             </li>
-      
+
           </ul>
         </section>
+
       </article>
 
-      <!--
-        - #PORTFOLIO
-      -->
 
+      <!--
+        - #PORTFOLIO PAGE
+      -->
       <article class="portfolio" data-page="portfolio">
 
         <header>
@@ -1138,646 +992,875 @@
 
         <section class="projects">
 
-
-           <!-- Here is the Filter buttons for Windows
-             We can add more buttons in it by copy one of the list (li) 
-             and paste below the last list, changing the name of the button-->
-
-
           <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            
-             <li class="filter-item">
-              <button data-filter-btn>Data Analytics</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Machine Learning</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Computer Vision</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Generative AI</button>
-            </li>
-            
-            <li class="filter-item">
-              <button data-filter-btn>AI Agents</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>AI Automation</button>
-            </li>
-            
-
+            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+            <li class="filter-item"><button data-filter-btn>Data Analytics</button></li>
+            <li class="filter-item"><button data-filter-btn>Machine Learning</button></li>
+            <li class="filter-item"><button data-filter-btn>Computer Vision</button></li>
+            <li class="filter-item"><button data-filter-btn>Generative AI</button></li>
+            <li class="filter-item"><button data-filter-btn>AI Agents</button></li>
+            <li class="filter-item"><button data-filter-btn>AI Automation</button></li>
+            <li class="filter-item"><button data-filter-btn>Website</button></li>
           </ul>
 
-
-           <!--
-          This code is for filtering the buttons/categories
-          -->
-
-
           <div class="filter-select-box">
-
             <button class="filter-select" data-select>
-
               <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
             </button>
-            <!-- Here is the Filter buttons for Mobile
-             We can add more buttons in it by copy one of the list (li) and paste below the last list, changing the name of the button-->
-
             <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Data Analytics</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Machine Learning</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Computer Vision</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Generative AI</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>AI Agents</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>AI Automation</button>
-              </li>
-
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Data Analytics</button></li>
+              <li class="select-item"><button data-select-item>Machine Learning</button></li>
+              <li class="select-item"><button data-select-item>Computer Vision</button></li>
+              <li class="select-item"><button data-select-item>Generative AI</button></li>
+              <li class="select-item"><button data-select-item>AI Agents</button></li>
+              <li class="select-item"><button data-select-item>AI Automation</button></li>
+              <li class="select-item"><button data-select-item>Website</button></li>
             </ul>
-
           </div>
 
           <ul class="project-list">
-            <!--
-            - # Here is the 1st Project
-            -->
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Bilal-SPD/blob/main/Bilal_SPD.ipynb" target="_blank">
 
+            <!-- Project 1 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\Bilal ice cream factory.png" alt="AI Bussiness" loading="lazy">
+                  <img src="./assets/images/Bilal ice cream factory.png" alt="Bilal ice cream factory website screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
                 </figure>
-
-                <h3 class="project-title">Bilal ice cream factory website </h3>
-
-                <p class="project-category">website</p>
- <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Clinic_Management_Pro.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                <div class="project-content">
+                  <h3 class="project-title">Bilal ice cream factory website</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
                   </div>
-
-                  <img src=".\assets\images\Clinic Management Pro – Smart Healthcare, Simplified.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Clinic Management Pro </h3>
-
-                <p class="project-category">website</p>
-
-              </a>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Bilal-SPD/blob/main/Bilal_SPD.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Smart_Online_Academy_Management_System.ipynb" target="_blank">
-
+            <!-- Project 2 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\Smart Online Academy Management System.png" alt="AI Bussiness" loading="lazy">
+                  <img src="./assets/images/Clinic Management Pro – Smart Healthcare, Simplified.png" alt="Clinic Management Pro screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
                 </figure>
-
-                <h3 class="project-title">Smart Online Academy Management System </h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-             <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Travel_%26_Tour_Booking.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                <div class="project-content">
+                  <h3 class="project-title">Clinic Management Pro</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">Pandas</span>
                   </div>
-
-                  <img src=".\assets\images\TravelEase – Discover, Plan & Book Your Perfect Journey.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">TravelEase – Discover, Plan & Book Your Perfect Journey </h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/PrimeNest_Real_Estate.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Clinic_Management_Pro.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
                   </div>
-
-                  <img src=".\assets\images\PrimeNest Real Estate – Find Your Dream Property Today.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">PrimeNest Real Estate – Find Your Dream Property Today </h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Multi_Vendor_Marketplace.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\MarketHub – Your Ultimate Multi-Vendor Marketplace.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MarketHub – Your Ultimate Multi-Vendor Marketplace </h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-             <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Optical_Character_Recognition_(OCR).ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\Optical Character Recognition (OCR).png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Optical Character Recognition (OCR) </h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Weekly_Hostel_Menu.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\Weekly Hostel Menu.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Weekly Hostel Menu </h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Research-work-12/blob/main/Research%20work.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\Research work.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Research work</h3>
-
-                <p class="project-category">project</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/fast_food_website.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\fast food website.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">fast food website</h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/FitZone.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\gym fitness website.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">gym fitness website</h3>
-
-                <p class="project-category">website</p>
-
-              </a>
-            </li>
-<li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Hospital_Emergency_Room.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\Hospital Emergency Room Performance and Prediction Project.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Hospital Emergency Room Performance and Prediction Project</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            
-           <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Employee_Attrition_Prediction_System.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\Training.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Employee_Attrition_Prediction</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Quizz%20no(1).ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\EDA.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on google play store dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-        
- <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/(EDA)_of_the_2022_T20_World_Cup.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\(EDA) of the 2022 T20 World Cup.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA of the 2022 T20 world cup dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
- <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/COVID_19.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\(EDA) on COVID-19 Dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on covid-19 dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/diabets.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\(EDA) on Diabetes Dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on Diabetes Disease dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/heart_disease.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src=".\assets\images\(EDA) on Heart Disease Dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on Heart Disease dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-           
-           <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/EDA_%E2%80%93_Gene_Expression_on_leukemia_Dataset.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\EDA – Gene Expression Dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on Gene Expression Dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/(EDA)_on_Parkinson%E2%80%99s_Disease_Dataset.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\(EDA) on Parkinson’s Disease Dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on Parkinson’s Disease Datasett</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-           <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/_(EDA)_on_Breast_Cancer_Dataset.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\(EDA) on Breast Cancer Dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on Breast Cancer Dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-           <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Protein_Sequence_Analysis_EDA.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\protein  sequence analysis.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">protein  sequence analysis Dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Cardiovascular_Disease_Prediction.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\Cardiovascular Disease Prediction.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Cardiovascular Disease Prediction</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-             <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Student_marks_dataset.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\Student marks dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Student marks dataset</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Comparative_Exploratory_Data_Analysis_of_Diseases.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\Comparative Exploratory Data Analysis of Diseases.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Comparative Exploratory Data Analysis of Diseases
-</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/EDA_on_Cardiovascular_Disease_real_dataset.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\EDA Cardiovascular Disease dataset.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA on cardiovasular real dataset 
-</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-    <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/EDA%2BML.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\Machine Learning.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">EDA and ML on real CVD dataset 
-</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Prediction_of_Cardiovascular_Disease_using_Machine_Learning_Techniques.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\Cardiovascular Disease Prediction App.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Cardiovascular Disease (CVD) Prediction App 
-</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/customer%20sale%20anaysis.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\January 2029.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Customer Sales Analysis
-</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Early_Detection_of_Heart_Disease_using_Logistic_Regression_and_Random_Forest.ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\Early Detection of Heart Disease using Logistic Regression and Random Forest.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Early Detection of Heart Disease using Logistic Regression and Random Forest
-
-</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
-            </li>
-<li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/usama488/Data-science/blob/main/Deep_Learning%E2%80%93Based_Disease_Risk_Prediction_Using_Clinical_Healthcare_Data_(1).ipynb" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="\assets\images\Deep Learning–Based Disease Risk Prediction Using Clinical Healthcare Data.png" alt="AI Bussiness" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Deep Learning–Based Disease Risk Prediction Using Clinical Healthcare Data
-
-
-</h3>
-
-                <p class="project-category">Data Analytics</p>
-
-              </a>
+                </div>
+              </div>
             </li>
 
+            <!-- Project 3 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Smart Online Academy Management System.png" alt="Smart Online Academy Management System screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Smart Online Academy System</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Web Systems</span>
+                    <span class="tech-badge">Database</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Smart_Online_Academy_Management_System.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
 
-            <!--
-        - # For adding more projects copy the above list (li) and paste it below this comment before the </ul> tag
-            -->
+            <!-- Project 4 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/TravelEase – Discover, Plan & Book Your Perfect Journey.png" alt="TravelEase screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">TravelEase Booking Platform</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Data Science</span>
+                    <span class="tech-badge">UI/UX</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Travel_%26_Tour_Booking.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 5 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/PrimeNest Real Estate – Find Your Dream Property Today.png" alt="PrimeNest Real Estate screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">PrimeNest Real Estate</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Data Analysis</span>
+                    <span class="tech-badge">Web App</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/PrimeNest_Real_Estate.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 6 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/MarketHub – Your Ultimate Multi-Vendor Marketplace.png" alt="MarketHub Multi-Vendor Marketplace screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">MarketHub Multi-Vendor Marketplace</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">E-Commerce</span>
+                    <span class="tech-badge">Data Science</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Multi_Vendor_Marketplace.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 7 -->
+            <li class="project-item active" data-filter-item data-category="computer vision">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Optical Character Recognition (OCR).png" alt="Optical Character Recognition OCR screenshot" loading="lazy">
+                  <span class="project-category-badge">Computer Vision</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Optical Character Recognition (OCR)</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">OpenCV</span>
+                    <span class="tech-badge">OCR</span>
+                    <span class="tech-badge">Tesseract</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Optical_Character_Recognition_(OCR).ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 8 -->
+            <li class="project-item active" data-filter-item data-category="ai automation">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Weekly Hostel Menu.png" alt="Weekly Hostel Menu Automation screenshot" loading="lazy">
+                  <span class="project-category-badge">AI Automation</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Weekly Hostel Menu System</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Automation</span>
+                    <span class="tech-badge">Data Mgmt</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Weekly_Hostel_Menu.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 9 -->
+            <li class="project-item active" data-filter-item data-category="generative ai">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Research work.png" alt="Bioinformatics & AI Research Work screenshot" loading="lazy">
+                  <span class="project-category-badge">Generative AI</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Bioinformatics & AI Research Work</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Bioinformatics</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">AI Research</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Research-work-12/blob/main/Research%20work.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 10 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/fast food website.png" alt="Fast food website screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Fast Food Ordering Website</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">HTML/CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">UI Design</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/fast_food_website.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 11 -->
+            <li class="project-item active" data-filter-item data-category="website">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/gym fitness website.png" alt="Gym fitness website screenshot" loading="lazy">
+                  <span class="project-category-badge">Website</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">FitZone Gym Website</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">HTML/CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Frontend</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/FitZone.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 12 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Hospital Emergency Room Performance and Prediction Project.png" alt="Hospital Emergency Room Prediction screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Hospital Emergency Room Performance</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">Seaborn</span>
+                    <span class="tech-badge">Prediction</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Hospital_Emergency_Room.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 13 -->
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Training.png" alt="Employee Attrition Prediction System screenshot" loading="lazy">
+                  <span class="project-category-badge">Machine Learning</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Employee Attrition Prediction System</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Scikit-Learn</span>
+                    <span class="tech-badge">Random Forest</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Employee_Attrition_Prediction_System.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 14 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/EDA.png" alt="EDA on Google Play Store dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on Google Play Store Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">Matplotlib</span>
+                    <span class="tech-badge">EDA</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Quizz%20no(1).ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 15 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/(EDA) of the 2022 T20 World Cup.png" alt="EDA of 2022 T20 World Cup dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA of 2022 T20 World Cup</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">EDA</span>
+                    <span class="tech-badge">Seaborn</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/(EDA)_of_the_2022_T20_World_Cup.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 16 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/(EDA) on COVID-19 Dataset.png" alt="EDA on COVID-19 Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on COVID-19 Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Healthcare Data</span>
+                    <span class="tech-badge">Pandas</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/COVID_19.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 17 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/(EDA) on Diabetes Dataset.png" alt="EDA on Diabetes Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on Diabetes Disease Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Medical Data</span>
+                    <span class="tech-badge">EDA</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/diabets.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 18 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/(EDA) on Heart Disease Dataset.png" alt="EDA on Heart Disease Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on Heart Disease Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Bioinformatics</span>
+                    <span class="tech-badge">Stats</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/heart_disease.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 19 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/EDA – Gene Expression Dataset.png" alt="EDA on Gene Expression Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on Gene Expression Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Bioinformatics</span>
+                    <span class="tech-badge">Gene Expression</span>
+                    <span class="tech-badge">Python</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/EDA_%E2%80%93_Gene_Expression_on_leukemia_Dataset.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 20 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/(EDA) on Parkinson’s Disease Dataset.png" alt="EDA on Parkinson's Disease Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on Parkinson’s Disease Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Bioinformatics</span>
+                    <span class="tech-badge">Parkinson's</span>
+                    <span class="tech-badge">Python</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/(EDA)_on_Parkinson%E2%80%99s_Disease_Dataset.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 21 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/(EDA) on Breast Cancer Dataset.png" alt="EDA on Breast Cancer Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on Breast Cancer Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Bioinformatics</span>
+                    <span class="tech-badge">Oncology</span>
+                    <span class="tech-badge">Python</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/_(EDA)_on_Breast_Cancer_Dataset.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 22 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/protein  sequence analysis.png" alt="Protein Sequence Analysis screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Protein Sequence Analysis</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Bioinformatics</span>
+                    <span class="tech-badge">Proteomics</span>
+                    <span class="tech-badge">Biopython</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Protein_Sequence_Analysis_EDA.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 23 -->
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Cardiovascular Disease Prediction.png" alt="Cardiovascular Disease Prediction screenshot" loading="lazy">
+                  <span class="project-category-badge">Machine Learning</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Cardiovascular Disease Prediction</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">Scikit-Learn</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Cardiovascular_Disease_Prediction.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 24 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Student marks dataset.png" alt="Student Marks Analysis screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Student Performance & Marks Analysis</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">Statistics</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Student_marks_dataset.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 25 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Comparative Exploratory Data Analysis of Diseases.png" alt="Comparative EDA of Diseases screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Comparative EDA of Diseases</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Bioinformatics</span>
+                    <span class="tech-badge">Comparative Analysis</span>
+                    <span class="tech-badge">Python</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Comparative_Exploratory_Data_Analysis_of_Diseases.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 26 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/EDA Cardiovascular Disease dataset.png" alt="EDA on Cardiovascular Real Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA on CVD Clinical Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">CVD Dataset</span>
+                    <span class="tech-badge">Seaborn</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/EDA_on_Cardiovascular_Disease_real_dataset.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 27 -->
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Machine Learning.png" alt="EDA and ML on CVD Dataset screenshot" loading="lazy">
+                  <span class="project-category-badge">Machine Learning</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">EDA & ML Pipeline on CVD Dataset</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">Classification</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/EDA%2BML.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 28 -->
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Cardiovascular Disease Prediction App.png" alt="CVD Prediction App screenshot" loading="lazy">
+                  <span class="project-category-badge">Machine Learning</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">CVD Risk Prediction Web App</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">ML Deployment</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Prediction_of_Cardiovascular_Disease_using_Machine_Learning_Techniques.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 29 -->
+            <li class="project-item active" data-filter-item data-category="data analytics">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/January 2029.png" alt="Customer Sales Analysis screenshot" loading="lazy">
+                  <span class="project-category-badge">Data Analytics</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Customer Sales & Revenue Analysis</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Sales Analytics</span>
+                    <span class="tech-badge">Pandas</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/customer%20sale%20anaysis.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 30 -->
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Early Detection of Heart Disease using Logistic Regression and Random Forest.png" alt="Early Detection of Heart Disease screenshot" loading="lazy">
+                  <span class="project-category-badge">Machine Learning</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Heart Disease Logistic & Random Forest</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Logistic Regression</span>
+                    <span class="tech-badge">Random Forest</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Early_Detection_of_Heart_Disease_using_Logistic_Regression_and_Random_Forest.ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Project 31 -->
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <div class="project-card">
+                <figure class="project-img">
+                  <img src="./assets/images/Deep Learning–Based Disease Risk Prediction Using Clinical Healthcare Data.png" alt="Deep Learning Disease Risk Prediction screenshot" loading="lazy">
+                  <span class="project-category-badge">Machine Learning</span>
+                </figure>
+                <div class="project-content">
+                  <h3 class="project-title">Deep Learning Clinical Disease Prediction</h3>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Deep Learning</span>
+                    <span class="tech-badge">Healthcare AI</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/usama488/Data-science/blob/main/Deep_Learning%E2%80%93Based_Disease_Risk_Prediction_Using_Clinical_Healthcare_Data_(1).ipynb" target="_blank" class="btn-action">
+                      <ion-icon name="logo-github"></ion-icon> Code
+                    </a>
+                    <!-- EDIT: Add your live demo link below -->
+                    <a href="#" target="_blank" class="btn-action">
+                      <ion-icon name="open-outline"></ion-icon> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
 
           </ul>
 
@@ -1785,52 +1868,43 @@
 
       </article>
 
-      <!--
-        - #CONTACT
-      -->
 
+      <!--
+        - #CONTACT PAGE
+      -->
       <article class="contact" data-page="contact">
 
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        
         <section class="contact-form">
-                   
+
           <form action="#" class="form" data-form>
-            
+
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-            
+
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-            
+
             <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
+              <ion-icon name="paper-plane-outline"></ion-icon>
               <span>Send Message</span>
             </button>
-            
+
           </form>
 
-
-          <!---Map Title-->
-
-          </section>
+        </section>
 
         <section class="mapboxtitle" data-mapbox-title>
           <h3 class="h3 map-title">Location</h3>
-
-          <!--Map Section-->
         </section>
+
         <section class="mapbox" data-mapbox>
           <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5986.7249099660285!2d73.2469668316
-            4305!3d34.42128930842356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38de17bf878d1177%3A0x182b25a42224b791!2sHaz
-            ara%20University%20Mansehra!5e0!3m2!1sen!2s!4v1729511014579!5m2!1sen!2s" width="600" height="450"
-             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5986.7249099660285!2d73.24696683164305!3d34.42128930842356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38de17bf878d1177%3A0x182b25a42224b791!2sHazara%20University%20Mansehra!5e0!3m2!1sen!2s!4v1729511014579!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </figure>
         </section>
 
@@ -1840,19 +1914,44 @@
 
   </main>
 
+  <!-- Floating AI Assistant Button -->
+  <button class="ai-chatbot-btn" onclick="toggleAIChatbot()">
+    <ion-icon name="chatbubbles-outline"></ion-icon> Ask AI
+  </button>
+
+  <!-- Floating AI Chatbot Modal -->
+  <div class="ai-chatbot-modal" id="ai-chatbot-modal">
+    <div class="chatbot-header">
+      <div class="chatbot-title">
+        <ion-icon name="sparkles-outline"></ion-icon> Usama AI Assistant
+      </div>
+      <button onclick="toggleAIChatbot()" style="color: var(--text-dim); font-size: 18px;">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chat-msg ai-msg">
+        Hi there! I am Usama's AI Assistant. Ask me anything about Usama's projects, skills, education, or bioinformatics services!
+      </div>
+    </div>
+    <div class="chatbot-prompts">
+      <span class="prompt-chip" onclick="sendChatMessage('Who is Usama?')">Who is Usama?</span>
+      <span class="prompt-chip" onclick="sendChatMessage('What are your skills?')">Skills</span>
+      <span class="prompt-chip" onclick="sendChatMessage('Show top projects')">Projects</span>
+      <span class="prompt-chip" onclick="sendChatMessage('How to contact?')">Contact</span>
+    </div>
+    <div class="chatbot-input-bar">
+      <input type="text" id="chatbot-input" placeholder="Ask something about Usama..." autocomplete="off">
+      <button onclick="sendChatMessage()"><ion-icon name="send-outline"></ion-icon></button>
+    </div>
+  </div>
 
 
-
-
-
-  <!--
-    - custom js link
-  -->
+  <!-- Custom JS Scripts -->
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/animations.js"></script>
 
-  <!--
-    - ionicon link
-  -->
+  <!-- IonIcons CDN -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

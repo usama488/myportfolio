@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genomic DNA Extraction from Saliva & Buccal Swabs | Spin Column Case Study</title>
+  <meta name="description" content="Molecular Diagnostics Workflow: Non-invasive DNA extraction from oral epithelial cells using silica spin columns, Qubit vs Nanodrop quantification, PCR, and gel electrophoresis.">
+  <link rel="stylesheet" href="assets/css/wetlab-shared.css">
+  <link rel="stylesheet" href="assets/css/saliva-dna.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-container">
+    <div id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Top Series Navigation Strip -->
+  <nav class="series-nav-bar">
+    <a href="index.html" class="back-link">
+      <ion-icon name="arrow-back-outline"></ion-icon> &larr; Back to Portfolio
+    </a>
+    <div class="series-links">
+      <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Wet Lab Series:</span>
+      <a href="wetlab-dna-extraction.html" class="series-pill plant">1. CTAB Plant DNA</a>
+      <a href="wetlab-blood-dna-extraction.html" class="series-pill blood">2. Blood DNA</a>
+      <a href="wetlab-hair-dna-extraction.html" class="series-pill hair">3. Hair DNA</a>
+      <a href="wetlab-sperm-dna-extraction.html" class="series-pill sperm">4. Sperm DNA</a>
+      <a href="wetlab-saliva-dna-extraction.html" class="series-pill saliva active">5. Saliva DNA (Final)</a>
+      <a href="dna-sequencing-workflow.html" class="series-pill sequencing">Bridge: Sequencing &rarr;</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+
+    <!-- Sticky TOC -->
+    <aside class="toc-sidebar">
+      <h3 class="toc-title">Saliva DNA TOC</h3>
+      <ul class="toc-list">
+        <li><a href="#overview" class="toc-link">Overview & Oral Cells</a></li>
+        <li><a href="#master-table" class="toc-link">5-Sample Master Table</a></li>
+        <li><a href="#step-1" class="toc-link">Step 1: Dual Oral Collection</a></li>
+        <li><a href="#step-2" class="toc-link">Step 2: Cell Pelleting</a></li>
+        <li><a href="#step-3" class="toc-link">Step 3: Epithelial Lysis</a></li>
+        <li><a href="#step-4" class="toc-link">Step 4: Proteinase K Digestion</a></li>
+        <li><a href="#step-5" class="toc-link">Step 5: Silica Column Binding</a></li>
+        <li><a href="#step-6" class="toc-link">Step 6: Centrifugation</a></li>
+        <li><a href="#step-7" class="toc-link">Step 7: Mucin Washing</a></li>
+        <li><a href="#step-8" class="toc-link">Step 8: Pure DNA Elution</a></li>
+        <li><a href="#step-9" class="toc-link">Step 9: Nanodrop Spectrophotometry</a></li>
+        <li><a href="#step-10" class="toc-link">Step 10: Qubit vs Nanodrop</a></li>
+        <li><a href="#step-11" class="toc-link">Step 11: Gel Electrophoresis</a></li>
+        <li><a href="#step-12" class="toc-link">Step 12: Diagnostic PCR</a></li>
+        <li><a href="#step-13" class="toc-link">Step 13: PCR Band Check</a></li>
+        <li><a href="#workflow-timeline" class="toc-link">Final Timeline</a></li>
+        <li><a href="#references" class="toc-link">References</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-article">
+
+      <!-- Hero Section -->
+      <section class="hero-wrapper">
+        <div class="hero-header">
+          <span class="hero-subtitle" style="color: var(--accent-teal);">5th & Final Wet Lab Series Chapter</span>
+          <h1 class="hero-title">Genomic DNA Extraction from Saliva & Buccal Swabs</h1>
+          <p class="hero-description">
+            Non-invasive isolation of genomic DNA from oral cheek epithelial cells via silica-membrane spin column purification, introducing fluorometric Qubit quantification vs spectrophotometric Nanodrop analysis.
+          </p>
+        </div>
+
+        <div class="notice-banner" style="background: #f0fdf4; border-left-color: var(--accent-teal); color: #115e59;">
+          <strong>Series Complete Badge:</strong> This project completes the 5-part Wet Lab DNA Extraction Collection (Plant, Blood, Hair, Sperm, Saliva/Buccal).
+        </div>
+
+        <div class="hero-meta-strip">
+          <span class="info-chip"><strong>Method:</strong> Silica Spin Column</span>
+          <span class="info-chip"><strong>Sample:</strong> Saliva / Buccal Epithelial Cells</span>
+          <span class="info-chip"><strong>Quantification:</strong> Qubit 4.0 Fluorometer + Nanodrop</span>
+          <span class="info-chip"><strong>Author:</strong> Usama Bin Ali (Bioinformatics Researcher)</span>
+          <span class="info-chip" id="read-time-badge">~14 min read</span>
+        </div>
+
+        <div class="hero-collage">
+          <div class="hero-img-box"><img src="assets/images/saliva-dna/hero-saliva-kit.jpg" alt="Saliva DNA collection tube with stabilizing buffer"></div>
+          <div class="hero-img-box"><img src="assets/images/saliva-dna/hero-buccal-swab.jpg" alt="Sterile buccal cheek swab collection"></div>
+          <div class="hero-img-box"><img src="assets/images/saliva-dna/hero-qubit.jpg" alt="Qubit 4.0 Fluorometer instrument"></div>
+          <div class="hero-img-box"><img src="assets/images/saliva-dna/hero-gel-oral.jpg" alt="Oral genomic DNA gel electrophoresis"></div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section id="overview" class="glass-card section-anchor">
+        <h2 class="section-heading">Overview & Non-Invasive Oral Sampling</h2>
+        <p>
+          Oral epithelial cells desquamated into saliva or collected via cheek swabs provide a rich source of intact nuclear genomic DNA without requiring invasive venipuncture needles.
+        </p>
+      </section>
+
+      <!-- Master 5-Sample Comparison Table -->
+      <section id="master-table" class="glass-card section-anchor">
+        <h2 class="section-heading">Master 5-Sample DNA Extraction Matrix</h2>
+        <p>A comprehensive summary of the complete 5-part Wet Lab Portfolio Collection:</p>
+
+        <div class="table-responsive">
+          <table class="sci-table">
+            <thead>
+              <tr><th>Sample Type</th><th>Primary DNA Source</th><th>Collection Method</th><th>Primary Scientific Advantage</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><a href="wetlab-dna-extraction.html">Plant Tissue</a></td><td>Plant cell nuclei</td><td>Fresh leaf tissue</td><td>High yield for agricultural WGS</td></tr>
+              <tr><td><a href="wetlab-blood-dna-extraction.html">Blood</a></td><td>Leukocytes (WBCs)</td><td>EDTA Venipuncture</td><td>Maximum DNA yield for clinical assays</td></tr>
+              <tr><td><a href="wetlab-hair-dna-extraction.html">Hair</a></td><td>Follicular sheath cells</td><td>Root extraction</td><td>Forensic physical evidence</td></tr>
+              <tr><td><a href="wetlab-sperm-dna-extraction.html">Sperm</a></td><td>Haploid nucleus</td><td>Ejaculate collection</td><td>Protamine male-lineage Y-STR profiling</td></tr>
+              <tr style="background: #ccfbf1; font-weight: 600;"><td>Saliva / Swab</td><td>Buccal epithelial cells</td><td>Oral tube / Swab</td><td>100% Non-invasive patient sampling</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Steps 1 - 8 -->
+      <section id="step-1" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">01</span> Dual Oral Sample Collection</h2>
+        <div class="grid-cards">
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--text-dark);">Method A: Saliva Tube</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Spit 2 mL saliva into preservation buffer tube to stabilize nucleases at room temperature.</p>
+          </div>
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--text-dark);">Method B: Buccal Cheek Swab</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Firmly rub sterile swab against inner cheek mucosa for 60 seconds to dislodge epithelial cells.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="step-2" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">02</span> Cell Recovery & Pelleting</h2>
+        <p>Centrifuge at 4,000 rpm to pellet oral cells while discarding supernatant mucins.</p>
+      </section>
+
+      <section id="step-3" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">03</span> Epithelial Cell Lysis</h2>
+        <p>Solubilize cell membranes using detergent-rich lysis buffer.</p>
+      </section>
+
+      <section id="step-4" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">04</span> Proteinase K Digestion</h2>
+        <p>Digest salivary enzymes and cellular proteins at 56°C for 30 minutes.</p>
+      </section>
+
+      <section id="step-5" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">05</span> Silica Membrane Column Binding</h2>
+        <p>Chaotropic salts bind genomic DNA to silica fibers in the spin column.</p>
+      </section>
+
+      <section id="step-6" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">06</span> Centrifugation</h2>
+        <p>Spin to pass lysate through silica membrane.</p>
+      </section>
+
+      <section id="step-7" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">07</span> Salivary Mucin Washing</h2>
+        <p>Wash buffers clean residual salivary mucins, enzymes, and food particles.</p>
+      </section>
+
+      <section id="step-8" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">08</span> Pure Genomic DNA Elution</h2>
+        <p>Elute in 50 &mu;L nuclease-free water.</p>
+      </section>
+
+      <!-- Step 9 & 10: Nanodrop vs Qubit -->
+      <section id="step-9" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 09: Nanodrop Spectrophotometry</h2>
+        <p>Measures overall UV absorbance at 260 nm ($A_{260}/A_{280} \approx 1.8$).</p>
+      </section>
+
+      <section id="step-10" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 10: Qubit Fluorometry vs. Nanodrop Spectrophotometry</h2>
+        <p>A crucial technical comparison between spectrophotometer and fluorometer instruments:</p>
+
+        <div class="grid-cards">
+          <div class="icon-card" style="border-left: 4px solid var(--accent-blue);">
+            <h4 style="color: var(--accent-blue); font-weight: 600;">Nanodrop (UV Spectrophotometry)</h4>
+            <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 16px; margin-top: 6px;">
+              <li>Measures total UV absorbance at 260 nm.</li>
+              <li>Cannot distinguish intact dsDNA from RNA or free nucleotides.</li>
+              <li>Provides $A_{260}/A_{280}$ and $A_{260}/A_{230}$ purity ratios.</li>
+            </ul>
+          </div>
+          <div class="icon-card" style="border-left: 4px solid var(--accent-teal);">
+            <h4 style="color: var(--accent-teal); font-weight: 600;">Qubit 4.0 (Fluorometric Assay)</h4>
+            <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 16px; margin-top: 6px;">
+              <li>Uses dsDNA-selective fluorescent dyes (PicoGreen).</li>
+              <li>Measures <em>only</em> intact double-stranded DNA.</li>
+              <li>Essential for NGS library prep precision.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="step-11" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 11: Gel Verification & Comparison Slider</h2>
+        <div class="comparison-slider-container">
+          <img src="assets/images/saliva-dna/gel-saliva-intact.jpg" alt="Intact Oral DNA Band" class="comparison-img">
+          <div class="comparison-overlay">
+            <img src="assets/images/saliva-dna/gel-saliva-mucin-smeared.jpg" alt="Mucin Contaminated Smear">
+          </div>
+          <div class="comparison-handle">&harr;</div>
+          <span class="comparison-label label-before">Mucin Contaminated Smear</span>
+          <span class="comparison-label label-after">Intact High-MW Oral Band</span>
+        </div>
+      </section>
+
+      <section id="step-12" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 12: Diagnostic PCR Amplification</h2>
+        <p>Amplifying human house-keeping genes (GAPDH) to verify PCR compatibility.</p>
+      </section>
+
+      <section id="step-13" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 13: Gel Electrophoresis Verification</h2>
+        <p>Confirming clean single amplicon bands on 1% agarose gel.</p>
+      </section>
+
+      <!-- Workflow Timeline -->
+      <section id="workflow-timeline" class="glass-card section-anchor">
+        <h2 class="section-heading">Complete 13-Stage Saliva DNA Timeline</h2>
+        <div class="timeline-wrapper">
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-teal);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 1–4: Saliva Collection & Epithelial Lysis</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Non-invasive oral swab sampling, cell pelleting, and Proteinase K digestion.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-teal);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 5–13: Spin Column Elution to Qubit & PCR</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Silica matrix binding, Qubit dsDNA fluorometry, PCR, and gel verification.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section id="references" class="glass-card section-anchor">
+        <h2 class="section-heading">References</h2>
+        <ol style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          <li>Freeman, B., et al. (2003). DNA buccal swabs provide a reliable source of DNA for high-throughput genotyping. <em>Twin Research</em>, 6(3), 183-187.</li>
+          <li>Thermo Fisher Scientific (2021). Qubit Fluorometric Quantification Technical Guide.</li>
+        </ol>
+      </section>
+
+      <!-- Footer Showcase Index -->
+      <footer class="collection-footer">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark);">Wet Lab DNA Extraction Series Collection</h3>
+        <div class="collection-grid">
+          <a href="wetlab-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">1. CTAB Plant DNA</div>
+            <div class="collection-card-desc">CTAB extraction from plant leaves with high polyphenols.</div>
+          </a>
+          <a href="wetlab-blood-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">2. Blood DNA</div>
+            <div class="collection-card-desc">Clinical genomic DNA isolation using spin columns.</div>
+          </a>
+          <a href="wetlab-hair-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">3. Hair DNA</div>
+            <div class="collection-card-desc">Forensic hair follicle DNA extraction with Proteinase K.</div>
+          </a>
+          <a href="wetlab-sperm-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">4. Sperm DNA</div>
+            <div class="collection-card-desc">Protamine breakdown via DTT for forensic genetics.</div>
+          </a>
+          <a href="wetlab-saliva-dna-extraction.html" class="collection-card" style="border-color: var(--accent-teal);">
+            <div class="collection-card-title">5. Saliva DNA</div>
+            <div class="collection-card-desc">Non-invasive oral cell DNA prep with Qubit quantification.</div>
+          </a>
+          <a href="dna-sequencing-workflow.html" class="collection-card" style="border-color: #2563eb;">
+            <div class="collection-card-title">Bridge: Sequencing &rarr;</div>
+            <div class="collection-card-desc">Handoff from purified DNA to NGS & Bioinformatics.</div>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="assets/js/wetlab-shared.js"></script>
+  <script src="assets/js/saliva-dna.js"></script>
+</body>
+</html>

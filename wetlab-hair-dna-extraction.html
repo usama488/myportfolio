@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genomic DNA Extraction from Hair Samples | Forensic Spin Column Case Study</title>
+  <meta name="description" content="Forensic Molecular Biology Workflow: DNA Extraction from Hair Follicles using Proteinase K Keratin Digestion, Silica Spin Columns, PCR, and Gel Electrophoresis.">
+  <link rel="stylesheet" href="assets/css/wetlab-shared.css">
+  <link rel="stylesheet" href="assets/css/hair-dna.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-container">
+    <div id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Top Series Navigation Strip -->
+  <nav class="series-nav-bar">
+    <a href="index.html" class="back-link">
+      <ion-icon name="arrow-back-outline"></ion-icon> &larr; Back to Portfolio
+    </a>
+    <div class="series-links">
+      <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Wet Lab Series:</span>
+      <a href="wetlab-dna-extraction.html" class="series-pill plant">1. CTAB Plant DNA</a>
+      <a href="wetlab-blood-dna-extraction.html" class="series-pill blood">2. Blood DNA</a>
+      <a href="wetlab-hair-dna-extraction.html" class="series-pill hair active">3. Hair DNA</a>
+      <a href="wetlab-sperm-dna-extraction.html" class="series-pill sperm">4. Sperm DNA</a>
+      <a href="wetlab-saliva-dna-extraction.html" class="series-pill saliva">5. Saliva DNA</a>
+      <a href="dna-sequencing-workflow.html" class="series-pill sequencing">Bridge: Sequencing &rarr;</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+
+    <!-- Sticky TOC -->
+    <aside class="toc-sidebar">
+      <h3 class="toc-title">Hair DNA TOC</h3>
+      <ul class="toc-list">
+        <li><a href="#overview" class="toc-link">Forensic Overview</a></li>
+        <li><a href="#why-hair" class="toc-link">Why Hair Samples</a></li>
+        <li><a href="#step-1" class="toc-link">Step 1: Hair Root Collection</a></li>
+        <li><a href="#step-2" class="toc-link">Step 2: Surface Washing</a></li>
+        <li><a href="#step-3" class="toc-link">Step 3: Tissue Maceration</a></li>
+        <li><a href="#step-4" class="toc-link">Step 4: Lysis Buffer</a></li>
+        <li><a href="#step-5" class="toc-link">Step 5: Keratin Digestion (Prot K)</a></li>
+        <li><a href="#step-6" class="toc-link">Step 6: Column Binding</a></li>
+        <li><a href="#step-7" class="toc-link">Step 7: Centrifugation</a></li>
+        <li><a href="#step-8" class="toc-link">Step 8: Column Washing</a></li>
+        <li><a href="#step-9" class="toc-link">Step 9: Pure DNA Elution</a></li>
+        <li><a href="#step-10" class="toc-link">Step 10: Nanodrop Check</a></li>
+        <li><a href="#step-11" class="toc-link">Step 11: Gel Verification</a></li>
+        <li><a href="#step-12" class="toc-link">Step 12: Forensic PCR</a></li>
+        <li><a href="#step-13" class="toc-link">Step 13: STR Amplification Check</a></li>
+        <li><a href="#forensic-apps" class="toc-link">Forensic Applications</a></li>
+        <li><a href="#workflow-timeline" class="toc-link">Final Timeline</a></li>
+        <li><a href="#references" class="toc-link">References</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-article">
+
+      <!-- Hero Section -->
+      <section class="hero-wrapper">
+        <div class="hero-header">
+          <span class="hero-subtitle" style="color: var(--accent-purple);">Forensic Molecular Evidence Protocol</span>
+          <h1 class="hero-title">Genomic DNA Extraction from Hair Samples (Spin Column)</h1>
+          <p class="hero-description">
+            Isolating trace nuclear genomic DNA from human hair follicles through extensive Proteinase K keratin digestion and silica-membrane spin column purification for downstream forensic STR profiling.
+          </p>
+        </div>
+
+        <div class="notice-banner" style="background: #faf5ff; border-left-color: var(--accent-purple); color: #6b21a8;">
+          <strong>Chain-of-Custody & Evidence Notice:</strong> Sample processing adheres to standard forensic evidence handling procedures to eliminate exogenous environmental DNA contamination.
+        </div>
+
+        <div class="hero-meta-strip">
+          <span class="info-chip"><strong>Method:</strong> Silica Spin Column</span>
+          <span class="info-chip"><strong>Sample:</strong> Hair Follicle / Root</span>
+          <span class="info-chip"><strong>Field:</strong> Forensic Molecular Biology</span>
+          <span class="info-chip"><strong>Author:</strong> Usama Bin Ali (Bioinformatics Researcher)</span>
+          <span class="info-chip" id="read-time-badge">~14 min read</span>
+        </div>
+
+        <div class="hero-collage">
+          <div class="hero-img-box"><img src="assets/images/hair-dna/hero-hair-root.jpg" alt="Hair root under microscope"></div>
+          <div class="hero-img-box"><img src="assets/images/hair-dna/hero-evidence-bag.jpg" alt="Forensic evidence collection bag"></div>
+          <div class="hero-img-box"><img src="assets/images/hair-dna/hero-microcentrifuge.jpg" alt="Forensic lab microcentrifuge"></div>
+          <div class="hero-img-box"><img src="assets/images/hair-dna/hero-gel-forensic.jpg" alt="Forensic STR PCR gel electrophoresis"></div>
+        </div>
+      </section>
+
+      <!-- Forensic Overview -->
+      <section id="overview" class="glass-card section-anchor">
+        <h2 class="section-heading">Forensic Overview & Biological Basis</h2>
+        <p>
+          Hair shafts consist primarily of cornified <span class="tooltip-term">keratin<span class="tooltip-popup">Fibrous protein forming structural units of hair, requiring strong enzymatic digestion.</span></span> protein containing degraded nuclear DNA (primarily suitable only for mitochondrial DNA sequencing). In contrast, the basal <span class="tooltip-term">hair follicle<span class="tooltip-popup">The root region containing nucleated epithelial sheath cells rich in genomic DNA.</span></span> contains intact nucleated cells necessary for nuclear genomic DNA extraction and Short Tandem Repeat (STR) profiling.
+        </p>
+      </section>
+
+      <!-- Why Hair Samples (Pros vs Cons) -->
+      <section id="why-hair" class="glass-card section-anchor">
+        <h2 class="section-heading">Why Hair Samples Are Used in Forensics</h2>
+        <div class="grid-cards">
+          <div class="icon-card" style="border-left: 4px solid var(--accent-green-light);">
+            <h4 style="color: var(--accent-green-light); font-weight: 600;">Advantages</h4>
+            <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 16px; margin-top: 8px;">
+              <li>Non-invasive sample collection.</li>
+              <li>Highly stable over long periods at room temperature.</li>
+              <li>Crucial evidence at crime scenes when blood is absent.</li>
+            </ul>
+          </div>
+          <div class="icon-card" style="border-left: 4px solid var(--accent-amber);">
+            <h4 style="color: var(--accent-amber); font-weight: 600;">Limitations</h4>
+            <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 16px; margin-top: 8px;">
+              <li>Hair shafts without roots yield limited nuclear DNA.</li>
+              <li>Keratin matrix requires prolonged Proteinase K incubation.</li>
+              <li>Requires ultra-clean handling to avoid PCR inhibitors.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Steps 1 - 9 -->
+      <section id="step-1" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">01</span> Hair Root Sample Collection</h2>
+        <p>Surgically verify the presence of an intact follicular tag under a stereomicroscope.</p>
+      </section>
+
+      <section id="step-2" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">02</span> Surface Decontamination Washing</h2>
+        <p>Wash hair 3x with sterile 70% ethanol and nuclease-free water to strip external environmental DNA and dirt.</p>
+      </section>
+
+      <section id="step-3" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">03</span> Hair Cutting & Mechanical Disruption</h2>
+        <p>Minced root tissue (1–2 mm fragments) increases surface area for enzymatic digestion.</p>
+      </section>
+
+      <section id="step-4" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">04</span> Lysis Buffer Addition</h2>
+        <p>Add lysis buffer with high detergent content to break cellular membranes.</p>
+      </section>
+
+      <section id="step-5" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">05</span> Keratinase & Proteinase K Digestion</h2>
+        <p>Incubate with Proteinase K (20 mg/mL) and DTT at 56°C for 2–4 hours until hair fragments dissolve entirely.</p>
+      </section>
+
+      <section id="step-6" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">06</span> Silica Spin Column Binding</h2>
+        <p>Chaotropic salts promote selective binding of genomic DNA to the silica matrix.</p>
+      </section>
+
+      <section id="step-7" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">07</span> Centrifugation & Flow-Through Removal</h2>
+        <p>Centrifuge at 11,000 x g for 1 minute; discard flow-through containing digested keratin.</p>
+      </section>
+
+      <section id="step-8" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">08</span> Washing (Ethanol Wash Buffers)</h2>
+        <p>Wash column twice to remove residual digestion salts and cellular debris.</p>
+      </section>
+
+      <section id="step-9" class="glass-card section-anchor">
+        <h2 class="section-heading"><span class="step-badge">09</span> Low-Volume DNA Elution</h2>
+        <p>Elute in 25 &mu;L TE buffer to maximize DNA concentration for low-yield forensic samples.</p>
+      </section>
+
+      <!-- Steps 10 - 13 -->
+      <section id="step-10" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 10: Nanodrop & Low-Yield Assessment</h2>
+        <p>Low concentration (~2–15 ng/&mu;L) is typical for single-hair extractions; purity ratios $A_{260}/A_{280} \approx 1.7-1.9$.</p>
+      </section>
+
+      <section id="step-11" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 11: Gel Verification & Comparison Slider</h2>
+        <div class="comparison-slider-container">
+          <img src="assets/images/hair-dna/gel-hair-intact.jpg" alt="Intact Hair Root DNA Band" class="comparison-img">
+          <div class="comparison-overlay">
+            <img src="assets/images/hair-dna/gel-hair-shaft-degraded.jpg" alt="Hair Shaft Degraded DNA">
+          </div>
+          <div class="comparison-handle">&harr;</div>
+          <span class="comparison-label label-before">Degraded Hair Shaft DNA</span>
+          <span class="comparison-label label-after">Intact Hair Follicle Band</span>
+        </div>
+      </section>
+
+      <section id="step-12" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 12: Forensic PCR Amplification</h2>
+        <p>Amplification of polymorphic STR loci (e.g., TH01, vWA, D16S539) for human identity matching.</p>
+      </section>
+
+      <section id="step-13" class="glass-card section-anchor">
+        <h2 class="section-heading">Step 13: STR Amplification Verification</h2>
+        <p>Verify distinct amplicon band sizing on high-resolution polyacrylamide or 2% agarose gel.</p>
+      </section>
+
+      <!-- Forensic Applications -->
+      <section id="forensic-apps" class="glass-card section-anchor">
+        <h2 class="section-heading">Forensic Applications</h2>
+        <div class="grid-cards">
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--accent-purple);">Crime Scene Investigation</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Matching suspect profiles to hair fibers found at evidence scenes.</p>
+          </div>
+          <div class="icon-card">
+            <h4 style="font-weight: 600; color: var(--accent-purple);">Missing Persons Identification</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Kinship matching using personal items (hairbrushes).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow Timeline -->
+      <section id="workflow-timeline" class="glass-card section-anchor">
+        <h2 class="section-heading">Complete 12-Stage Hair DNA Workflow</h2>
+        <div class="timeline-wrapper">
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-purple);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 1–5: Follicle Washing & Keratin Digestion</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Decontamination wash, mincing, and overnight Proteinase K breakdown.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot" style="border-color: var(--accent-purple);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Stage 6–12: Spin Column Elution & STR PCR</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Silica matrix purification, low-volume elution, and STR locus amplification.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section id="references" class="glass-card section-anchor">
+        <h2 class="section-heading">References</h2>
+        <ol style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          <li>Yoshii, T., et al. (1993). DNA typing of bone and hair sheath samples. <em>International Journal of Legal Medicine</em>, 105(6), 335-339.</li>
+          <li>FBI Laboratory (2019). Quality Assurance Standards for Forensic DNA Testing Laboratories.</li>
+        </ol>
+      </section>
+
+      <!-- Footer Showcase Index -->
+      <footer class="collection-footer">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark);">Wet Lab DNA Extraction Series Collection</h3>
+        <div class="collection-grid">
+          <a href="wetlab-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">1. CTAB Plant DNA</div>
+            <div class="collection-card-desc">CTAB extraction from plant leaves with high polyphenols.</div>
+          </a>
+          <a href="wetlab-blood-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">2. Blood DNA</div>
+            <div class="collection-card-desc">Clinical genomic DNA isolation using spin columns.</div>
+          </a>
+          <a href="wetlab-hair-dna-extraction.html" class="collection-card" style="border-color: var(--accent-purple);">
+            <div class="collection-card-title">3. Hair DNA</div>
+            <div class="collection-card-desc">Forensic hair follicle DNA extraction with Proteinase K.</div>
+          </a>
+          <a href="wetlab-sperm-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">4. Sperm DNA</div>
+            <div class="collection-card-desc">Protamine breakdown via DTT for forensic genetics.</div>
+          </a>
+          <a href="wetlab-saliva-dna-extraction.html" class="collection-card">
+            <div class="collection-card-title">5. Saliva DNA</div>
+            <div class="collection-card-desc">Non-invasive oral cell DNA prep with Qubit quantification.</div>
+          </a>
+          <a href="dna-sequencing-workflow.html" class="collection-card" style="border-color: #2563eb;">
+            <div class="collection-card-title">Bridge: Sequencing &rarr;</div>
+            <div class="collection-card-desc">Handoff from purified DNA to NGS & Bioinformatics.</div>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="assets/js/wetlab-shared.js"></script>
+  <script src="assets/js/hair-dna.js"></script>
+</body>
+</html>

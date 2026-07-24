@@ -1,0 +1,19 @@
+/* Forensic Indigo/Violet Styling for Sperm DNA Extraction */
+:root {
+  --page-accent: var(--accent-indigo);
+  --page-accent-light: #6366f1;
+}
+
+.hero-wrapper {
+  border-top: 4px solid var(--accent-indigo);
+}
+
+.toc-link.active {
+  background: #e0e7ff;
+  color: var(--accent-indigo);
+  border-left-color: var(--accent-indigo);
+}
+
+.step-badge {
+  background: var(--accent-indigo);
+}
